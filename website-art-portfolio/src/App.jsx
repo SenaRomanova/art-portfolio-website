@@ -4,7 +4,7 @@ import Container from "@mui/material/Container";
 
 function App() {
     return( 
-        <Container sx={{bgcolor: "darkgray", height: "100vh", width: "100vh", padding: "10vh"}}>
+        <Container sx={{bgcolor: "darkgray", padding: '10vh', alignItems: "center", alignContent: "center"}}>
             <Header
                 content={{ text: 'Inna Romanova'}}
             />
