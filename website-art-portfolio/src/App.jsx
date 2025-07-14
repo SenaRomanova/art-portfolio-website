@@ -1,22 +1,17 @@
 import GeneralButton from "./assets/GeneralButton.jsx";
+import Menu from "./assets/MenuButton.jsx";
 import Header from "./Header.jsx"
-import Container from "@mui/material/Container";
+import Box from '@mui/material/Box';
 
 function App() {
     return( 
-        <Container sx={{bgcolor: "darkgray", padding: '10vh', alignItems: "center", alignContent: "center"}}>
-            <Header
-                content={{ text: 'Inna Romanova'}}
-            />
-            <nav>
-                <ul>
-                    <li><GeneralButton content = "Home" /></li>
-                    <li><GeneralButton content = "Meet the Artist" /></li>
-                    <li><GeneralButton content = "Gallery" /></li>
-                    <li><GeneralButton content = "Contact" /></li>
-                </ul>
-            </nav>
-        </Container>
+        <>
+            <Box sx={{display: "flex", justifyContent: 'space-between', alignItems: 'center', p:0.5}}>
+                <Header content={{ text: 'Inna Romanova'}}/>
+                <Menu/>
+            </Box>
+                
+        </>
     );
 }
 
