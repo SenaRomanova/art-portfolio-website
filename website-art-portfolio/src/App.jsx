@@ -7,8 +7,8 @@ function App() {
     return( 
         <>
             <Box sx={{display: "flex", justifyContent: 'space-between', alignItems: 'center', p:0.5}}>
-                <Header content={{ text: 'Inna Romanova'}}/>
                 <Menu/>
+                <Header content={{ text: 'Inna Romanova'}}/>
             </Box>
                 
         </>
