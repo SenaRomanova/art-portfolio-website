@@ -7,12 +7,6 @@
   background-color: #ffffff;
 }
 
-body {
-  margin: 5vw;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
 h1 {
   color: black;
   font-size: 3.2em;

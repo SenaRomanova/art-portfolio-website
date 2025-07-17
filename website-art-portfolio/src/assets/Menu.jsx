@@ -1,37 +1,32 @@
 
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import ListSubheader from '@mui/material/ListSubheader';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import GeneralButton from './GeneralButton';
-import DropdownButton from './DropdownButton';
+import DropdownMenuButton from './DropdownMenuButton';
 
 
-
+export const drawerWidth = 300; // Define the width of the drawer
 export default function Menu() {
 
   const DropdownContent = (
-        <Box sx={{display: 'flex', justifyContent: 'center'}}> 
-          <List>
-            <ListItem><GeneralButton content={"Example Series 1"}/></ListItem>
-            <ListItem><GeneralButton content={"Series 2"}/></ListItem>
-            <ListItem><GeneralButton content={"Series 3"}/></ListItem>
-          </List>
-        </Box>);
+      <Box>
+            <GeneralButton buttonName= {'series example 1'} to={'/series'}></GeneralButton>
+            <GeneralButton buttonName= {'series example 2'} to={'/series'} ></GeneralButton>
+            <GeneralButton buttonName= {'series example 3'} to={'/series'} ></GeneralButton>
+      </Box>);
 
   const DrawerContent = (
-    <Box sx={{display: 'flex', width: 300, height: '100%', alignItems: 'center'}}>
+    <Box sx={{display: 'flex', width: drawerWidth, height: '100%'}}>
       <List
-        sx={{ width: '100%', maxWidth: 500}}
+        sx={{ width: '100%'}}
         component="nav"
         >
-          
-        <ListItem><GeneralButton content={"artist"}/></ListItem>
-        <ListItem><GeneralButton content={"about"}/></ListItem>
-        <ListItem><GeneralButton content={"contacts"}/></ListItem>
-        
-        <ListItem><DropdownButton content={'series'}/></ListItem>
+        <ListItem><GeneralButton buttonName={"artist"} to={'/'}/></ListItem>
+        <ListItem><GeneralButton buttonName={"about"} to={'/about'}/></ListItem>
+        <ListItem><GeneralButton buttonName={"contacts"} to={'/contacts'}/></ListItem>
+        <ListItem><DropdownMenuButton buttonName={'series'} content={DropdownContent}/></ListItem>
 
       </List>
     </Box>
@@ -39,7 +34,7 @@ export default function Menu() {
 
   return (
     <div>
-      <Drawer anchor = 'left' variant= 'permanent' sx={{'& .MuiDrawer-paper': {backgroundColor: '#c7c7c7ff'}}}>{DrawerContent}</Drawer>
+      <Drawer anchor = 'left' variant= 'permanent' sx={{'& .MuiDrawer-paper': {backgroundColor: '#ffffffff', borderRight: '1px solid'}}}>{DrawerContent}</Drawer>
     </div>
   );
   
