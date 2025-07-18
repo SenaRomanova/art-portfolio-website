@@ -12,9 +12,9 @@ export default function Menu() {
 
   const DropdownContent = (
       <Box>
-            <GeneralButton buttonName= {'series example 1'} to={'/series'}></GeneralButton>
-            <GeneralButton buttonName= {'series example 2'} to={'/series'} ></GeneralButton>
-            <GeneralButton buttonName= {'series example 3'} to={'/series'} ></GeneralButton>
+            <GeneralButton buttonName= {'series example 1'} to={'/series'}/>
+            <GeneralButton buttonName= {'series example 2'} to={'/series'}/>
+            <GeneralButton buttonName= {'series example 3'} to={'/series'}/>
       </Box>);
 
   const DrawerContent = (
