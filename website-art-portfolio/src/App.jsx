@@ -1,3 +1,4 @@
+
 import Menu, {drawerWidth} from "./assets/Menu.jsx";
 import { Route, Routes } from "react-router-dom";
 import Series from "./pages/Series.jsx";
@@ -18,10 +19,11 @@ function App() {
 
     
     return( 
-        <Box sx={{display: "flex"}}>
-            {vw > 800 ? <Menu/> : null}
 
-            <Box sx={{bgcolor: '#6d181865', ml: vw > 800 ? `${drawerWidth}px` : 0, width: '100%', justifyItems: 'center'}}>
+    <>
+      <Box sx={{display: "flex"}}>
+            {vw > 800 ? <Menu/> : null}
+            <Box sx={{bgcolor: '#ffffff65', ml: vw > 800 ? `${drawerWidth}px` : 0, width: '100%', justifyItems: 'center'}}>
                 <Routes>
                     <Route path="/" element={<Home />}/>
                     <Route path="/series" element={<Series />}/>
@@ -30,6 +32,8 @@ function App() {
                 </Routes>
             </Box>
         </Box>
+    </>
+        
     );
 }
 
