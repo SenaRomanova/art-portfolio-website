@@ -13,6 +13,7 @@ import Sirens from "./pages/Sirens.jsx";
 import TheInnerFish from "./pages/TheInnerFish.jsx";
 import ThePenates from "./pages/ThePenates.jsx";
 import TotemsAndTalismans from "./pages/TotemsAndTalismans.jsx";
+import FishCover from "./assets/FishCover.jpg";
 
 function App() {
     const [vw, setVw] = useState(window.innerWidth); //vw is the variable, setVw is the function to set the value of vw
@@ -26,9 +27,25 @@ function App() {
     return( 
 
     <>
-      <Box sx={{display: "flex"}}>
-            {vw > 800 ? <Menu/> : null}
-            <Box sx={{bgcolor: '#ffffff65', ml: vw > 800 ? `${drawerWidth}px` : 0, width: '100%', justifyItems: 'center'}}>
+    <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", overflow: 'hidden', bgcolor: '#000000', height: '25vh'}}>
+        <Box
+          component="img"
+          src={FishCover}
+          alt="Logo"
+          sx={{
+            paddingBottom: '0.5em',
+            width: 'auto',
+            height: '55vw', 
+            alignContent: 'center',
+            justifyContent: 'center',
+            position: 'relative',
+            top: '50px',
+        }}/>
+    </Box>
+        
+    <Box sx={{display: "flex"}}>
+        {vw > 800 ? <Menu/> : null}
+        <Box sx={{bgcolor: '#ffffff65', ml: vw > 800 ? `${drawerWidth}px` : 0, width: '100%', justifyItems: 'center'}}>
                 <Routes>
                     <Route path="/" element={<Home />}/>
                     <Route path="/anotherlions" element={<AnotherLions />}/>

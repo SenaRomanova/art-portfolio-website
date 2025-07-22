@@ -5,7 +5,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import GeneralButton from './GeneralButton';
 
-export default function DropdownMenuButton({ buttonName, content, paddingLeft }) {
+export default function DropdownMenuButton({ buttonName, content, fontSize, paddingLeft }) {
   const [open, setOpen] = React.useState(false);
 
   const toggleMenu = () => setOpen(!open);
@@ -16,7 +16,7 @@ export default function DropdownMenuButton({ buttonName, content, paddingLeft })
         disableRipple
         onClick={toggleMenu} variant='text' color='white' sx= {
         {display: 'inline-flex', 
-        fontSize: '1.5em', 
+        fontSize: {fontSize} || '1em', 
         alignItems: 'center', 
         justifyContent: 'left', 
         width: '100%', 
