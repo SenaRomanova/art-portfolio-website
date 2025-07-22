@@ -5,7 +5,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import GeneralButton from './GeneralButton';
 
-export default function DropdownMenuButton({ buttonName, content }) {
+export default function DropdownMenuButton({ buttonName, content, paddingLeft }) {
   const [open, setOpen] = React.useState(false);
 
   const toggleMenu = () => setOpen(!open);
@@ -18,18 +18,18 @@ export default function DropdownMenuButton({ buttonName, content }) {
         {display: 'inline-flex', 
         fontSize: '1.5em', 
         alignItems: 'center', 
-        justifyContent: 'center', 
+        justifyContent: 'left', 
         width: '100%', 
-        padding: 1, 
+        paddingLeft: {paddingLeft} || '4vw', 
         textTransform: 'none', 
         '&:hover': 
         {color: '#cb0000ff'}}
       }>
         
-        {!open && <KeyboardArrowRightIcon sx={{ mr: 1 }}/>}
-        {open && (<KeyboardArrowDownIcon sx={{ mr: 1 }}/>)} 
+        {buttonName} {/* move this lower to have the icon be on the left */}
+        {!open && <KeyboardArrowRightIcon sx={{ ml: 1 }}/>}
+        {open && (<KeyboardArrowDownIcon sx={{ ml: 1 }}/>)} 
 
-        {buttonName}
 
       </Button>
       

@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 
-export default function GeneralButton({buttonName, to}) {
+export default function GeneralButton({buttonName, to, fontSize, paddingLeft}) {
   return (
   <Button 
     disableRipple 
@@ -11,11 +11,11 @@ export default function GeneralButton({buttonName, to}) {
     to={to} //if to prop is provided, set the to attribute
     sx= {
       {display: 'inline-flex', 
-      fontSize: '1.5em', 
+      fontSize: {fontSize}, 
       alignItems: 'center', 
-      justifyContent: 'center', 
+      justifyContent: 'left', 
       width: '100%', 
-      padding: 1, 
+      paddingLeft: {paddingLeft} || '4vw', 
       textTransform: 'none', 
       '&:hover': 
       {color: '#cb0000ff'}}

@@ -1,13 +1,18 @@
 
 import Menu, {drawerWidth} from "./assets/Menu.jsx";
 import { Route, Routes } from "react-router-dom";
-import Series from "./pages/Series.jsx";
 import Contacts from "./pages/Contacts.jsx";
 import About from "./pages/About.jsx";
 import Home from "./pages/Home.jsx";
 import Box from '@mui/material/Box';
 import { useEffect, useState } from "react";
 import Container from "@mui/material/Container";
+import AnotherLions from "./pages/AnotherLions.jsx";
+import NomadicBeauties from "./pages/NomadicBeauties.jsx";
+import Sirens from "./pages/Sirens.jsx";
+import TheInnerFish from "./pages/TheInnerFish.jsx";
+import ThePenates from "./pages/ThePenates.jsx";
+import TotemsAndTalismans from "./pages/TotemsAndTalismans.jsx";
 
 function App() {
     const [vw, setVw] = useState(window.innerWidth); //vw is the variable, setVw is the function to set the value of vw
@@ -26,7 +31,12 @@ function App() {
             <Box sx={{bgcolor: '#ffffff65', ml: vw > 800 ? `${drawerWidth}px` : 0, width: '100%', justifyItems: 'center'}}>
                 <Routes>
                     <Route path="/" element={<Home />}/>
-                    <Route path="/series" element={<Series />}/>
+                    <Route path="/anotherlions" element={<AnotherLions />}/>
+                    <Route path="/nomadicbeauties" element={<NomadicBeauties />}/>
+                    <Route path="/sirens" element={<Sirens />}/>
+                    <Route path="/theinnerfish" element={<TheInnerFish />}/>
+                    <Route path="/thepenates" element={<ThePenates />}/>
+                    <Route path="/totemsandtalismans" element={<TotemsAndTalismans />}/>
                     <Route path="/contacts" element={<Contacts />}/>
                     <Route path="/about" element={<About />}/>
                 </Routes>
