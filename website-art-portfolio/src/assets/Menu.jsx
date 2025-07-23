@@ -13,7 +13,7 @@ import IRLogo from '../assets/IRLogo.PNG';
 
 
 export const drawerWidth = 320;
-export const drawerHeight = 640;
+export const drawerHeight = 600;
 export default function Menu() {
 
   const DropdownContent = (
@@ -27,7 +27,7 @@ export default function Menu() {
       </Box>);
 
   const Logo = (
-    <Container sx={{display: 'flex', alignItems: 'center', width: drawerWidth, p: 2}}>
+    <Container sx={{display: 'flex', alignItems: 'center', width: drawerWidth, p: 2.5}}>
       <Box
           component="img"
           src={IRLogo}
@@ -40,18 +40,18 @@ export default function Menu() {
 
       <Box sx={{display: 'flex', flexDirection: 'column', width: 'inherit', paddingLeft: '0.5em'}}>
         <Box sx={{display: 'flex', width: 'inherit', flexDirection: 'column'}}>
-          <Typography variant="h5" sx={{ fontWeight: 100, textAlign: 'left', color: 'grey', wordSpacing: '0.5em'}}>
+          <Typography variant="h5" sx={{ fontWeight: 100, textAlign: 'left', color: 'grey', wordSpacing: '0.7em'}}>
             I N N A
           </Typography>
         </Box>
-        <Box sx={{width: 'inherit' , height: '2px', bgcolor: 'red'}}/>
+        <Box sx={{width: '26vh' , height: '2px', bgcolor: 'red'}}/>
         <Box sx={{display: 'flex', width: 'inherit', flexDirection: 'column'}}>
           <Typography variant="h4" sx={{fontWeight: 200, textAlign: 'left', color: '#000000'}}>
             ROMANOVA
           </Typography>
         </Box>
         <Box sx={{display: 'flex', width: 'inherit', flexDirection: 'column'}}>
-          <Typography variant="h5" sx={{fontWeight: 100, lineHeight: 0.5, textAlign: 'left', color: 'grey'}}>
+          <Typography sx={{fontWeight: 100, fontSize: '1.5em', lineHeight: 0.5, textAlign: 'left', color: 'grey'}}>
             artist
           </Typography>
         </Box>
@@ -67,8 +67,6 @@ export default function Menu() {
 
     <Box sx={{bgcolor: 'white', display: 'flex', width: drawerWidth, alignContent: 'center', paddingLeft: '2.8em'}}>
       <List sx={{ width: '100%'}}component="nav">
-
-        <ListItem><GeneralButton buttonName={"home"} to={'/'} fontSize={'1.2em'} paddingLeft={'1.5em'}/></ListItem>
         <ListItem><GeneralButton buttonName={"about"} to={'/about'} fontSize={'1.2em'} paddingLeft={'1.5em'}/></ListItem>
         <ListItem><DropdownMenuButton buttonName={'series'} fontSize={'1.2em'} content={DropdownContent} paddingLeft={'1.5em'}/></ListItem>
         <ListItem><GeneralButton buttonName={"contacts"} to={'/contacts'} fontSize={'1.2em'} paddingLeft={'1.5em'}/></ListItem>
@@ -78,9 +76,15 @@ export default function Menu() {
   );
 
   return (
-    <div>
-      <Drawer anchor = 'left' variant= 'permanent' sx={{'& .MuiDrawer-paper': {backgroundColor: '#ffffffff'}}}>{DrawerContent}</Drawer>
-    </div>
+    // <div>
+    //   <Drawer anchor = 'left' variant= 'permanent' sx={{'& .MuiDrawer-paper': {backgroundColor: '#ffffffff'}}}>{DrawerContent}</Drawer>
+    // </div>
+    <Box sx={{
+      width: drawerWidth, height: drawerHeight,
+      position: 'fixed', alignSelf: 'flex-start'}}>
+        {DrawerContent}
+
+    </Box>
   );
   
 }

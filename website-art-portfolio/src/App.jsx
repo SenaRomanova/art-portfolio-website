@@ -27,7 +27,7 @@ function App() {
     return( 
 
     <>
-    <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", overflow: 'hidden', bgcolor: '#000000', height: '25vh'}}>
+    <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", overflow: 'hidden', bgcolor: '#000000', height: '24vh'}}>
         <Box
           component="img"
           src={FishCover}
@@ -35,17 +35,17 @@ function App() {
           sx={{
             paddingBottom: '0.5em',
             width: 'auto',
-            height: '55vw', 
+            height: '60vw', 
             alignContent: 'center',
             justifyContent: 'center',
             position: 'relative',
-            top: '50px',
+            top: '50px'
         }}/>
     </Box>
         
     <Box sx={{display: "flex"}}>
         {vw > 800 ? <Menu/> : null}
-        <Box sx={{bgcolor: '#ffffff65', ml: vw > 800 ? `${drawerWidth}px` : 0, width: '100%', justifyItems: 'center'}}>
+        <Box sx={{bgcolor: '#ffffff65', ml: vw > 800 ? `${drawerWidth}px` : 0, width: '100%', justifyItems: 'center', borderTop: '2px solid #e70101ff'}}>
                 <Routes>
                     <Route path="/" element={<Home />}/>
                     <Route path="/anotherlions" element={<AnotherLions />}/>

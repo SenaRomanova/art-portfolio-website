@@ -17,6 +17,7 @@ export default function DropdownMenuButton({ buttonName, content, fontSize, padd
         onClick={toggleMenu} variant='text' color='white' sx= {
         {display: 'inline-flex', 
         fontSize: {fontSize} || '1em', 
+        color: '#858585ff',
         alignItems: 'center', 
         justifyContent: 'left', 
         width: '100%', 
