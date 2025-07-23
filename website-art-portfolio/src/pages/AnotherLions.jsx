@@ -36,16 +36,20 @@ export default function AnotherLions() {
                     <img src={FishCover} alt="Art 1" />
                 </ImageListItem>
                 <ImageListItem key="image2" sx={{width: 90}}>
-                    <img src={FishCover} alt="Art 2" />
+                    <img src={IRLogo} alt="Art 2" />
                 </ImageListItem>
                 <ImageListItem key="image3" sx={{width: 90}}>
                     <img src={FishCover} alt="Art 3" />
                 </ImageListItem>
                 <ImageListItem key="image4" sx={{width: 90}}>
-                    <img src={FishCover} alt="Art 4" />
+                    <img src={IRLogo} alt="Art 4" />
                 </ImageListItem>
 
             </ImageList>
+        </Box>
+
+        <Box sx={{ bgcolor: 'black', display: "flex", justifyContent: "center",  alignItems: "center", width: '50vw', padding: 2, height: 5000}}>
+            hi
         </Box>
 
         

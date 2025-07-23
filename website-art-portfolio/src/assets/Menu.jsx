@@ -1,13 +1,11 @@
 
 import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import GeneralButton from './GeneralButton';
 import DropdownMenuButton from './DropdownMenuButton';
 import Typography from '@mui/material/Typography';
-import '../assets/IRLogo.PNG'; // Adjust the path as necessary
-import Divider from '@mui/material/Divider';
+import '../assets/IRLogo.PNG'; 
 import Container from '@mui/material/Container';
 import IRLogo from '../assets/IRLogo.PNG';
 
@@ -79,8 +77,7 @@ export default function Menu() {
     // <div>
     //   <Drawer anchor = 'left' variant= 'permanent' sx={{'& .MuiDrawer-paper': {backgroundColor: '#ffffffff'}}}>{DrawerContent}</Drawer>
     // </div>
-    <Box sx={{
-      width: drawerWidth, height: '100vh', position: 'sticky', alignSelf: 'flex-start', bgcolor: '#ffffff'}}>
+    <Box sx={{width: drawerWidth, height: '50vh', alignSelf: 'flex-start', bgcolor: '#ffffff', borderRight: '1px solid rgb(201, 201, 201)'}}>
         {DrawerContent}
 
     </Box>
