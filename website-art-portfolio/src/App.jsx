@@ -43,7 +43,7 @@ function App() {
         }}/>
     </Box>
         
-    <Box sx={{display: "flex", borderTop: '2px solid #e70101ff', position: 'sticky'}}>
+    <Box sx={{display: "flex", borderTop: '2px solid #e70101ff'}}>
         {vw > 800 ? <Menu/> : null}
         <Box sx={{bgcolor: '#ffffff65', width: '100%', justifyItems: 'center'}}>
                 <Routes>
