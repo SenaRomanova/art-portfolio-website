@@ -67,7 +67,7 @@ export default function Menu() {
 
     <Box sx={{ display: 'flex', width: drawerWidth, alignContent: 'center', paddingLeft: '2.8em'}}>
       <List sx={{ width: '100%'}}component="nav">
-        <ListItem><GeneralButton buttonName={"about"} to={'/'} fontSize={'1.2em'} paddingLeft={'1.5em'}/></ListItem>
+        <ListItem><GeneralButton buttonName={"about"} to={'/about'} fontSize={'1.2em'} paddingLeft={'1.5em'}/></ListItem>
         <ListItem><DropdownMenuButton buttonName={'series'} fontSize={'1.2em'} content={DropdownContent} paddingLeft={'1.5em'}/></ListItem>
         <ListItem><GeneralButton buttonName={"contacts"} to={'/contacts'} fontSize={'1.2em'} paddingLeft={'1.5em'}/></ListItem>
       </List>
