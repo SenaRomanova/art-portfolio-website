@@ -44,7 +44,7 @@ export default function Menu() {
             I N N A
           </Typography>
         </Box>
-        <Box sx={{width: '26vh' , height: '2px', bgcolor: 'red'}}/>
+        <Box sx={{width: '230px' , height: '2px', bgcolor: 'red'}}/>
         <Box sx={{display: 'flex', width: 'inherit', flexDirection: 'column'}}>
           <Typography variant="h4" sx={{fontWeight: 200, textAlign: 'left', color: '#000000'}}>
             ROMANOVA
@@ -65,9 +65,9 @@ export default function Menu() {
 
     <Box sx={{width: drawerWidth, height: '10vh'}}/>
 
-    <Box sx={{bgcolor: 'white', display: 'flex', width: drawerWidth, alignContent: 'center', paddingLeft: '2.8em'}}>
+    <Box sx={{ display: 'flex', width: drawerWidth, alignContent: 'center', paddingLeft: '2.8em'}}>
       <List sx={{ width: '100%'}}component="nav">
-        <ListItem><GeneralButton buttonName={"about"} to={'/about'} fontSize={'1.2em'} paddingLeft={'1.5em'}/></ListItem>
+        <ListItem><GeneralButton buttonName={"about"} to={'/'} fontSize={'1.2em'} paddingLeft={'1.5em'}/></ListItem>
         <ListItem><DropdownMenuButton buttonName={'series'} fontSize={'1.2em'} content={DropdownContent} paddingLeft={'1.5em'}/></ListItem>
         <ListItem><GeneralButton buttonName={"contacts"} to={'/contacts'} fontSize={'1.2em'} paddingLeft={'1.5em'}/></ListItem>
       </List>
@@ -80,8 +80,7 @@ export default function Menu() {
     //   <Drawer anchor = 'left' variant= 'permanent' sx={{'& .MuiDrawer-paper': {backgroundColor: '#ffffffff'}}}>{DrawerContent}</Drawer>
     // </div>
     <Box sx={{
-      width: drawerWidth, height: drawerHeight,
-      position: 'fixed', alignSelf: 'flex-start'}}>
+      width: drawerWidth, height: '100vh', position: 'sticky', alignSelf: 'flex-start', bgcolor: '#ffffff'}}>
         {DrawerContent}
 
     </Box>

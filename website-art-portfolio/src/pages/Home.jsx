@@ -9,13 +9,13 @@ export default function Home() {
                 <Typography variant="h2" color="grey"> Home </Typography>
             </Container>
 
-            <Container sx={{ margin: '16px', bgcolor: '#ffa0ff', display: 'flex', height: '50vh', justifyContent: "center",  alignItems: "center" }}>
+            <Container sx={{ margin: '16px', bgcolor: '#858585', display: 'flex', height: '50vh', justifyContent: "center",  alignItems: "center" }}>
                         
                 <Container sx={{ margin: '16px', width: 'inherit', height: 'inherit', bgcolor: '#000000' }}></Container>
                 <Container sx={{ margin: '16px', width: 'inherit', height: 'inherit', bgcolor: '#000000' }}></Container>
             </Container>
 
-            <Container sx={{ margin: '16px', bgcolor: '#ffa0ff', display: 'flex', height: '50vh', justifyContent: "center",  alignItems: "center" }}>
+            <Container sx={{ margin: '16px', bgcolor: '#858585', display: 'flex', height: '50vh', justifyContent: "center",  alignItems: "center" }}>
                         
                 <Container sx={{ margin: '16px', width: 'inherit', height: 'inherit', bgcolor: '#000000' }}></Container>
                 <Container sx={{ margin: '16px', width: 'inherit', height: 'inherit', bgcolor: '#000000' }}></Container>

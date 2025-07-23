@@ -45,7 +45,7 @@ function App() {
         
     <Box sx={{display: "flex", borderTop: '2px solid #e70101ff'}}>
         {vw > 800 ? <Menu/> : null}
-        <Box sx={{bgcolor: '#ffffff65', ml: vw > 800 ? `${drawerWidth}px` : 0, width: '100%', justifyItems: 'center'}}>
+        <Box sx={{bgcolor: '#ffffff65', width: '100%', justifyItems: 'center'}}>
                 <Routes>
                     <Route path="/" element={<Home />}/>
                     <Route path="/anotherlions" element={<AnotherLions />}/>
