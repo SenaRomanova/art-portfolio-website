@@ -77,7 +77,7 @@ export default function Menu() {
     // <div>
     //   <Drawer anchor = 'left' variant= 'permanent' sx={{'& .MuiDrawer-paper': {backgroundColor: '#ffffffff'}}}>{DrawerContent}</Drawer>
     // </div>
-    <Box sx={{width: drawerWidth, height: '50vh', alignSelf: 'flex-start', bgcolor: '#ffffff', borderRight: '1px solid rgb(201, 201, 201)', position: 'sticky'}}>
+    <Box sx={{width: drawerWidth, height: '80vh', alignSelf: 'flex-start', bgcolor: '#ffffff', borderRight: '1px solid rgb(201, 201, 201)', position: 'sticky'}}>
         {DrawerContent}
 
     </Box>
