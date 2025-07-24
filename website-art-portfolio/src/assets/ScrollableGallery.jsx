@@ -11,17 +11,9 @@ import IconButton from "@mui/material/IconButton";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
-export default function ScrollableGallery({ children, height = '100vh', width = '100%' }) {
+export default function ScrollableGallery({imgUrls}) {
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const imgUrls = [
-        FishCover,
-        IRLogo,
-        FishCover,
-        IRLogo,
-        FishCover,
-        IRLogo
-    ];
-
+    imgUrls = imgUrls || []; // Default images if none provided
     
     return(
         <>

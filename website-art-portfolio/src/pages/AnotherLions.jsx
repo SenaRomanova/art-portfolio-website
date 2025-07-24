@@ -3,8 +3,19 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import ScrollableGallery from "../assets/ScrollableGallery";
+import FishCover from "../assets/FishCover.jpg";
+import IRLogo from "../assets/IRLogo.PNG";
 
 export default function AnotherLions() {
+    const imgUrls = [
+        FishCover,
+        IRLogo,
+        FishCover,
+        IRLogo,
+        FishCover,
+        IRLogo
+    ];
+
     return(
         <Box sx={{justifyContent: 'space-between',  alignItems: "center", width: '100%'}}>
 
@@ -13,7 +24,7 @@ export default function AnotherLions() {
             </Box>
 
             <Box sx={{display: "flex", justifyContent: "center",  alignItems: "center", margin: 5}}>
-                <ScrollableGallery/>
+                <ScrollableGallery imgUrls={imgUrls}/>
             </Box>
 
             {/* <Box sx={{display: "flex", justifyContent: "center",  alignItems: "center"}}>
