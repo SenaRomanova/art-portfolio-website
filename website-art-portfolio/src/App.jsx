@@ -14,6 +14,7 @@ import TheInnerFish from "./pages/TheInnerFish.jsx";
 import ThePenates from "./pages/ThePenates.jsx";
 import TotemsAndTalismans from "./pages/TotemsAndTalismans.jsx";
 import FishCover from "./assets/FishCover.jpg";
+import Template from "./pages/PageTemplate.jsx";
 
 function App() {
     const [vw, setVw] = useState(window.innerWidth); //vw is the variable, setVw is the function to set the value of vw
@@ -55,7 +56,9 @@ function App() {
                     <Route path="/thepenates" element={<ThePenates />}/>
                     <Route path="/totemsandtalismans" element={<TotemsAndTalismans />}/>
                     <Route path="/contacts" element={<Contacts />}/>
+                    <Route path="/template" element={<Template />}/>
                     <Route path="/about" element={<About />}/>
+
                 </Routes>
             </Box>
         </Box>

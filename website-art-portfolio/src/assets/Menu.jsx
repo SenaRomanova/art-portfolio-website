@@ -22,6 +22,7 @@ export default function Menu() {
             <GeneralButton buttonName= {'Sirens'} to={'/sirens'} fontSize={'1em'} />
             <GeneralButton buttonName= {'The Penates (The Antique)'} to={'/thepenates'} fontSize={'1em'} />
             <GeneralButton buttonName= {'Another Lions'} to={'/anotherlions'} fontSize={'1em'} />
+            <GeneralButton buttonName= {'Template'} to={'/template'} fontSize={'1em'} />
       </Box>);
 
   const Logo = (
