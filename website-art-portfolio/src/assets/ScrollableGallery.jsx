@@ -32,7 +32,7 @@ export default function ScrollableGallery({imgUrls}) {
                 <Box sx={{display: 'flex', height: 'inherit', width: 'inherit', overflow: 'hidden', justifyContent: 'center', alignItems: 'center'}}>
                     <Box
                         component={"img"}
-                        src={imgUrls[selectedIndex]}
+                        src= {selectedIndex === -1? imgUrls[0] : imgUrls[selectedIndex]}
                         alt="Logo"
                         sx={{
                             height: 360, 

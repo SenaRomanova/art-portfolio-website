@@ -16,13 +16,13 @@ export default function Menu() {
 
   const DropdownContent = (
       <Box sx={{paddingTop: '1em', paddingLeft: '3em'}}>
+            <GeneralButton buttonName= {'Template'} to={'/template'} fontSize={'1em'} />
             <GeneralButton buttonName= {'Nomadic Beauties'} to={'/nomadicbeauties'} fontSize={'1em'} />
             <GeneralButton buttonName= {'The Inner Fish'} to={'/theinnerfish'} fontSize={'1em'} />
             <GeneralButton buttonName= {'Totems & Talismans'} to={'/totemsandtalismans'} fontSize={'1em'} />
             <GeneralButton buttonName= {'Sirens'} to={'/sirens'} fontSize={'1em'} />
             <GeneralButton buttonName= {'The Penates (The Antique)'} to={'/thepenates'} fontSize={'1em'} />
             <GeneralButton buttonName= {'Another Lions'} to={'/anotherlions'} fontSize={'1em'} />
-            <GeneralButton buttonName= {'Template'} to={'/template'} fontSize={'1em'} />
       </Box>);
 
   const Logo = (
