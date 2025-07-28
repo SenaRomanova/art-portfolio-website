@@ -10,8 +10,9 @@ import Container from '@mui/material/Container';
 import IRLogo from '../assets/IRLogo.PNG';
 
 
-export const drawerWidth = 320;
+export const drawerWidth = 300;
 export const drawerHeight = 600;
+
 export default function Menu() {
 
   const DropdownContent = (
@@ -20,7 +21,7 @@ export default function Menu() {
             <GeneralButton buttonName= {'Nomadic Beauties'} to={'/nomadicbeauties'} fontSize={'1em'} />
             <GeneralButton buttonName= {'The Inner Fish'} to={'/theinnerfish'} fontSize={'1em'} />
             <GeneralButton buttonName= {'Totems & Talismans'} to={'/totemsandtalismans'} fontSize={'1em'} />
-            <GeneralButton buttonName= {'Sirens'} to={'/sirens'} fontSize={'1em'} />
+            <GeneralButton buttonName= {'The Moon and Sirens'} to={'/sirens'} fontSize={'1em'} />
             <GeneralButton buttonName= {'The Penates (The Antique)'} to={'/thepenates'} fontSize={'1em'} />
             <GeneralButton buttonName= {'Another Lions'} to={'/anotherlions'} fontSize={'1em'} />
       </Box>);
@@ -43,7 +44,7 @@ export default function Menu() {
             I N N A
           </Typography>
         </Box>
-        <Box sx={{width: '230px' , height: '2px', bgcolor: 'red'}}/>
+        <Box sx={{width: '200px' , height: '2px', bgcolor: 'red'}}/>
         <Box sx={{display: 'flex', width: 'inherit', flexDirection: 'column'}}>
           <Typography variant="h4" sx={{fontWeight: 200, textAlign: 'left', color: '#000000'}}>
             ROMANOVA
@@ -78,7 +79,7 @@ export default function Menu() {
     // <div>
     //   <Drawer anchor = 'left' variant= 'permanent' sx={{'& .MuiDrawer-paper': {backgroundColor: '#ffffffff'}}}>{DrawerContent}</Drawer>
     // </div>
-    <Box sx={{width: drawerWidth, height: '80vh', alignSelf: 'flex-start', bgcolor: '#ffffff', borderRight: '1px solid rgb(201, 201, 201)', position: 'sticky'}}>
+    <Box sx={{width: drawerWidth, height: '80vh', alignSelf: 'flex-start', bgcolor: '#ffffff', position: 'sticky'}}>
         {DrawerContent}
 
     </Box>

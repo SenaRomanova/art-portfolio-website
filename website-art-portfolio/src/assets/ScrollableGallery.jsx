@@ -18,10 +18,10 @@ export default function ScrollableGallery({imgUrls}) {
     return(
         <>
 
-        <Stack sx={{display: "flex", justifyContent: "center",  alignItems: "center", padding: 2, width: 700, height: 400}}> 
+        <Stack sx={{display: "flex", justifyContent: "center",  alignItems: "center", padding: 2, marginTop: 5, width: 'inherit', height: 'auto'}}> 
             <Container sx={{display: "flex", justifyContent: "center",  alignItems: "center"}}>
 
-                <Box sx={{height: '300px', width: '40px', position: 'relative', alignContent: 'center'}}>
+                <Box sx={{height: '300px', width: '5vh', position: 'relative', alignContent: 'center'}}>
                     <IconButton
                         onClick={() => setSelectedIndex((selectedIndex + imgUrls.length - 1) % imgUrls.length)}
                         sx={{color: 'white', alignItems: 'center', justifyContent: 'center', width: 'inherit', height: 'inherit', borderRadius: 1}}>
@@ -35,18 +35,19 @@ export default function ScrollableGallery({imgUrls}) {
                         src= {selectedIndex === -1? imgUrls[0] : imgUrls[selectedIndex]}
                         alt="Logo"
                         sx={{
-                            height: 360, 
+                            height: '70vh', 
                             width: 'auto',
                             marginBottom: 3,
                             marginTop: 3,
                             position: 'relative',
                             alignContent: 'center',
                             justifyContent: 'center',
+                            borderRadius: 1,
                         }}
                         />
                 </Box>
 
-                <Box sx={{height: '300px', width: '40px', position: 'relative', alignContent: 'center'}}>
+                <Box sx={{height: '300px', width: '5vh', position: 'relative', alignContent: 'center'}}>
                     <IconButton
                         onClick={() => setSelectedIndex((selectedIndex + 1) % imgUrls.length)}
                         sx={{color: 'white', alignItems: 'center', justifyContent: 'center', width: 'inherit', height: 'inherit', borderRadius: 1}}>
@@ -65,8 +66,9 @@ export default function ScrollableGallery({imgUrls}) {
                     {imgUrls.map((url, index) => (
                     <ImageListItem 
                         key={index} 
-                        sx={{width: 90, height: 90, objectFit: "cover", borderRadius: 1, border: selectedIndex === index ? '1px solid rgba(0, 0, 0, 0.54)' : 'none'}}>
+                        sx={{width: 90, height: 90, objectFit: "cover", borderRadius: '5px' ,border: selectedIndex === index ? '1px solid rgba(0, 0, 0, 0.54)' : 'none'}}>
                             <img src={url} alt="Art 1"
+                                style={{borderRadius: 5, cursor: 'pointer', width: '100%', height: '100%'}}
                                 onClick={() => setSelectedIndex(index)}/>
                     </ImageListItem>
                 ))}

@@ -15,6 +15,12 @@ import ThePenates from "./pages/ThePenates.jsx";
 import TotemsAndTalismans from "./pages/TotemsAndTalismans.jsx";
 import FishCover from "./assets/FishCover.jpg";
 import Template from "./pages/PageTemplate.jsx";
+import OverlayWindow from "./assets/OverlayWindow.jsx";
+import Dialog from "@mui/material/Dialog";
+
+import FishProcess from "./assets/FishProcess.jpg";
+import ExampleDetail1 from "./assets/ExampleDetail1.png";
+import ExampleDetail2 from "./assets/ExampleDetail2.png";
 
 function App() {
     const [vw, setVw] = useState(window.innerWidth); //vw is the variable, setVw is the function to set the value of vw
@@ -24,29 +30,22 @@ function App() {
         return () => window.removeEventListener("resize", handleResize); //cleanup function to remove the event listener when the component is unmounted
     }, []);
 
-    
-    return( 
+    const imageList = ([
+        FishCover,
+        FishProcess,
+        ExampleDetail1,
+        ExampleDetail2
+        ]);
 
-    <>
-    <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", overflow: 'hidden', bgcolor: '#000000', height: '24vh'}}>
-        <Box
-          component="img"
-          src={FishCover}
-          alt="Logo"
-          sx={{
-            paddingBottom: '0.5em',
-            width: 'auto',
-            height: '60vw', 
-            alignContent: 'center',
-            justifyContent: 'center',
-            position: 'relative',
-            top: '50px'
-        }}/>
-    </Box>
+    const content = (
+        <>   
+
         
-    <Box sx={{display: "flex", borderTop: '2px solid #e70101ff'}}>
-        {vw > 800 ? <Menu/> : null}
-        <Box sx={{bgcolor: '#ffffff65', width: '100%', justifyItems: 'center'}}>
+        <OverlayWindow imageList={imageList} isOpen={true}/>
+
+        <Box sx={{display: "flex"}}>
+            {vw > 800 ? <Menu/> : null}
+            <Box sx={{bgcolor: '#ffffff65', width: '100%', justifyItems: 'center'}}>
                 <Routes>
                     <Route path="/" element={<Home />}/>
                     <Route path="/anotherlions" element={<AnotherLions />}/>
@@ -58,9 +57,34 @@ function App() {
                     <Route path="/contacts" element={<Contacts />}/>
                     <Route path="/template" element={<Template />}/>
                     <Route path="/about" element={<About />}/>
-
                 </Routes>
             </Box>
+        </Box>
+        </>
+    );
+
+    
+    return( 
+        <>
+        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", overflow: 'hidden', bgcolor: '#000000', height: '24vh', borderBottom: '2px solid #ce0000ff'}}>
+            <Box
+            component="img"
+            src={FishCover}
+            alt="Logo"
+            sx={{
+                paddingBottom: '0.5em',
+                width: 'auto',
+                height: '60vw', 
+                alignContent: 'center',
+                justifyContent: 'center',
+                position: 'relative',
+                top: '50px'
+            }}/>
+        </Box>
+
+        <Box 
+        sx={{ maxWidth: 1500, margin: '0 auto' }}>
+            {content}
         </Box>
     </>
         
