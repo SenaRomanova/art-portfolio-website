@@ -1,4 +1,5 @@
 import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import AltaiSun from "../assets/ImageCatalogue/NomadicBeauty/AltaiSun.jpg";
 import AltaiSunDetails from "../assets/ImageCatalogue/NomadicBeauty/AltaiSunDetails.jpg";
@@ -6,6 +7,8 @@ import ArcherGirl from "../assets/ImageCatalogue/NomadicBeauty/ArcherGirl.jpg";
 import ShamanGirl from "../assets/ImageCatalogue/NomadicBeauty/ShamanGirl.jpg";
 import StarGatherer from "../assets/ImageCatalogue/NomadicBeauty/StarGatherer.jpg";
 import StarGathererDetail from "../assets/ImageCatalogue/NomadicBeauty/StarGathererDetail.jpg";
+
+import Divider from '@mui/material/Divider';
 
 
 import Template from "./PageTemplate";
@@ -16,7 +19,9 @@ export default function NomadicBeauties() {
     const thumbnails = [AltaiSun, ArcherGirl, ShamanGirl, StarGatherer];
 
     //add the thumbnail descriptions:
-    const thumbnailDescriptions = ['Altai Sun', 'ArcherGirl', 'ShamanGirl', 'StarGatherer']
+    const thumbnailNames = ['Altai Sun', 'Archer Girl', 'Shaman Girl', 'Star Gatherer'];
+
+    const thumbnailDescriptions = ['Altai Sun Description', 'Archer Girl Description', 'Shaman Girl Description', 'Star Gatherer Description'];
 
     //create pop-up page content for each artwork:
     const altaiSunCatalogue = [AltaiSun, AltaiSunDetails];
@@ -39,16 +44,27 @@ export default function NomadicBeauties() {
     const archerGirlMaterials = 'Made of Blood and Sweat.';
     const shamanGirlMaterials = 'Made of Ancient Rules.';
     const starGathererMaterials = 'Made of the Secrets of the Universe.';
-    const materials = [altaiSunMaterials, archerGirlMaterials, shamanGirlMaterials, starGathererCatalogue];
+    const materials = [altaiSunMaterials, archerGirlMaterials, shamanGirlMaterials, starGathererMaterials];
 
 
     return(
-        <Template 
-            thumbnails={thumbnails} 
-            thumbnailDescriptions = {thumbnailDescriptions} 
-            detailedCatalogueList={catalogues}
-            descriptionList={descriptions}
-            materialsList={materials}
-        />
+        <>
+            <Box sx={{display: 'flex', width: '100%', margin: 3, marginBottom: 0}}>
+                <Typography variant="h2" sx={{color: 'black'}}> Nomadic Beauties </Typography>
+            </Box>
+
+
+            <Divider component="li" variant="middle" sx={{marginBottom: 4}}/>
+
+            <Template 
+                thumbnails={thumbnails} 
+                thumbnailNames={thumbnailNames}
+                thumbnailDescriptions = {thumbnailDescriptions} 
+                detailedCatalogueList={catalogues}
+                descriptionList={descriptions}
+                materialsList={materials}
+            />
+        </>
+        
     );
 }

@@ -9,44 +9,52 @@ import { useState } from "react";
 import OverlayWindow from "../assets/OverlayWindow";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import Modal from "@mui/material/Modal";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import Divider from "@mui/material/Divider";
 
-export default function Template({thumbnails, thumbnailDescriptions, detailedCatalogueList, descriptionList, materialsList}) {
+
+export default function Template({thumbnails, thumbnailNames, thumbnailDescriptions, detailedCatalogueList, descriptionList, materialsList}) {
     
-
-
     const [open, setOpen] = useState(false);
     const [id, setID] = useState(-1);
 
-    const gridElement = (image, description, id) => (
+    const gridElement = (image, name, description, id) => (
         <>
-            <Box sx={{width: '90%', height: '20vh', margin: 2, borderRadius: 1, border: '1px solid grey', display: 'flex', alignItems: 'center', '&:hover': {borderColor: 'red'}, 
+            <Box sx={{width: '90%', height: '20vh', margin: 2, borderRadius: 1, display: 'flex', alignItems: 'center', '&:hover': {borderColor: 'red'}, 
                 cursor: "pointer"}}
                 onClick={() => {
                     setID(id);
                     setOpen(true); 
                   }}>
-
-                <Box
-                component="img"
-                src={image}
-                alt="Image"
-                sx={{
-                    margin: 1,
-                    paddingBottom: '0.5em',
-                    width: 'auto',
-                    borderRadius: 1,
-                    height: '18vh', 
-                    alignContent: 'center',
-                    justifyContent: 'center',
-                    position: 'relative',
-                    
-                }}/>
-                <Box sx={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingRight: 2}}>
-                    <Typography variant="h5" sx={{ width: '90%', height: '90%', textAlign: 'right', color: 'black', wordSpacing: '0.7em'}}>
+                
+                <Container sx={{display: 'flex', width: '20%', alignContent: 'center', justifyContent: 'center'}}>
+                    <Box
+                        component="img"
+                        src={image}
+                        alt="Image"
+                        sx={{
+                            margin: 1,
+                            paddingBottom: '0.5em',
+                            width: 'auto',
+                            borderRadius: 1,
+                            height: '18vh', 
+                            alignContent: 'center',
+                            justifyContent: 'center',
+                            position: 'static',
+                        }}/>
+                </Container>
+                <Stack sx={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center', padding: 2}}>
+                    <Typography variant="h4" sx={{ width: '90%', height: '90%', textAlign: 'right', color: 'black'}}>
+                        {name}
+                    </Typography>
+                    <Typography variant="h6" sx={{ width: '90%', height: '90%', textAlign: 'right', color: 'black'}}>
                         {description}
                     </Typography>
-                </Box>
+                </Stack>
             </Box>
+            
+            <Divider component="li" variant="middle"/>
 
             
         </>
@@ -56,7 +64,7 @@ export default function Template({thumbnails, thumbnailDescriptions, detailedCat
     return(
         <>
 
-            {thumbnails.map((image, index) => gridElement(image, thumbnailDescriptions[index], index))}
+            {thumbnails.map((image, index) => gridElement(image, thumbnailNames[index], thumbnailDescriptions[index], index))}
 
             <Modal
                 open={open}
