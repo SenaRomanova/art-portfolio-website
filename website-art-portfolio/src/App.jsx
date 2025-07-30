@@ -40,8 +40,11 @@ function App() {
     const content = (
         <>   
 
-        
-        <OverlayWindow imageList={imageList} isOpen={true}/>
+        {/* <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", width: '100%', bgcolor: 'grey'}}>
+            <Routes>
+                <Route path="/example" element={<OverlayWindow imageList={imageList} isOpen={true}/>}/>
+            </Routes>
+        </Box> */}
 
         <Box sx={{display: "flex"}}>
             {vw > 800 ? <Menu/> : null}
@@ -55,7 +58,6 @@ function App() {
                     <Route path="/thepenates" element={<ThePenates />}/>
                     <Route path="/totemsandtalismans" element={<TotemsAndTalismans />}/>
                     <Route path="/contacts" element={<Contacts />}/>
-                    <Route path="/template" element={<Template />}/>
                     <Route path="/about" element={<About />}/>
                 </Routes>
             </Box>

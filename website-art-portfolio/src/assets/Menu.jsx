@@ -17,7 +17,6 @@ export default function Menu() {
 
   const DropdownContent = (
       <Box sx={{paddingTop: '1em', paddingLeft: '3em'}}>
-            <GeneralButton buttonName= {'Template'} to={'/template'} fontSize={'1em'} />
             <GeneralButton buttonName= {'Nomadic Beauties'} to={'/nomadicbeauties'} fontSize={'1em'} />
             <GeneralButton buttonName= {'The Inner Fish'} to={'/theinnerfish'} fontSize={'1em'} />
             <GeneralButton buttonName= {'Totems & Talismans'} to={'/totemsandtalismans'} fontSize={'1em'} />

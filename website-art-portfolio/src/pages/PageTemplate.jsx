@@ -4,14 +4,28 @@ import Grid from "@mui/material/Grid";
 import FishCover from "../assets/FishCover.jpg";
 import FishProcess from "../assets/FishProcess.jpg";
 import Typography from "@mui/material/Typography";
+import { Link } from 'react-router-dom';
+import { useState } from "react";
+import OverlayWindow from "../assets/OverlayWindow";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Modal from "@mui/material/Modal";
 
-export default function Template({imageList = [FishCover, FishProcess], imageDescriptions = ["Default description for the image.", "This is another default description."]}) {
-
+export default function Template({thumbnails, thumbnailDescriptions, detailedCatalogueList, descriptionList, materialsList}) {
     
 
-    const gridElement = (image, description) => (
+
+    const [open, setOpen] = useState(false);
+    const [id, setID] = useState(-1);
+
+    const gridElement = (image, description, id) => (
         <>
-            <Box sx={{width: '90%', height: '20vh',  bgcolor: 'white', margin: 2, borderRadius: 1, border: '1px solid grey', display: 'flex', alignItems: 'center', '&:hover': {borderColor: 'red'}}}>
+            <Box sx={{width: '90%', height: '20vh', margin: 2, borderRadius: 1, border: '1px solid grey', display: 'flex', alignItems: 'center', '&:hover': {borderColor: 'red'}, 
+                cursor: "pointer"}}
+                onClick={() => {
+                    setID(id);
+                    setOpen(true); 
+                  }}>
+
                 <Box
                 component="img"
                 src={image}
@@ -27,8 +41,8 @@ export default function Template({imageList = [FishCover, FishProcess], imageDes
                     position: 'relative',
                     
                 }}/>
-                <Box sx={{width: '100%', bgcolor: 'grey', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingRight: 2}}>
-                    <Typography variant="h5" sx={{ width: '90%', height: '90%', textAlign: 'right', color: 'black', bgcolor: 'red', wordSpacing: '0.7em'}}>
+                <Box sx={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingRight: 2}}>
+                    <Typography variant="h5" sx={{ width: '90%', height: '90%', textAlign: 'right', color: 'black', wordSpacing: '0.7em'}}>
                         {description}
                     </Typography>
                 </Box>
@@ -41,7 +55,28 @@ export default function Template({imageList = [FishCover, FishProcess], imageDes
 
     return(
         <>
-            {imageList.map((image, index) => gridElement(image, imageDescriptions[index]))}
+
+            {thumbnails.map((image, index) => gridElement(image, thumbnailDescriptions[index], index))}
+
+            <Modal
+                open={open}
+                onClose={() => setOpen(false)}
+                aria-labelledby="modal-title"
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    backdropFilter: 'blur(5px)',
+                    position: 'fixed'
+                }}
+                >
+                    <ClickAwayListener>
+
+                        <OverlayWindow imageList={detailedCatalogueList[id]} description={descriptionList[id]} materials={materialsList[id]}/>
+
+                    </ClickAwayListener>
+            </Modal>
+
         </>
         
     );
