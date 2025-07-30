@@ -49,12 +49,12 @@ export default function NomadicBeauties() {
 
     return(
         <>
-            <Box sx={{display: 'flex', width: '100%', margin: 3, marginBottom: 0}}>
-                <Typography variant="h2" sx={{color: 'black'}}> Nomadic Beauties </Typography>
+            <Box sx={{display: 'flex', width: '100%', margin: 3, marginBottom: 0, justifyContent: 'left'}}>
+                <Typography variant="h2" sx={{display: 'flex', justifyContent: 'left', color: 'black'}}> Nomadic Beauties </Typography>
             </Box>
 
 
-            <Divider component="li" variant="middle" sx={{marginBottom: 4}}/>
+            <Divider variant="middle" sx={{width: '90%', margin: 4}}/>
 
             <Template 
                 thumbnails={thumbnails} 

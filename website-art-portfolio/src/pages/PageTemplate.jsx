@@ -12,6 +12,7 @@ import Modal from "@mui/material/Modal";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
+import CloseIcon from '@mui/icons-material/Close';
 
 
 export default function Template({thumbnails, thumbnailNames, thumbnailDescriptions, detailedCatalogueList, descriptionList, materialsList}) {
@@ -54,9 +55,8 @@ export default function Template({thumbnails, thumbnailNames, thumbnailDescripti
                 </Stack>
             </Box>
             
-            <Divider component="li" variant="middle"/>
-
             
+            <Divider variant="middle" sx={{width: '90%'}}/>
         </>
     );
 
@@ -80,7 +80,10 @@ export default function Template({thumbnails, thumbnailNames, thumbnailDescripti
                 >
                     <ClickAwayListener>
 
+                    <>
+
                         <OverlayWindow imageList={detailedCatalogueList[id]} description={descriptionList[id]} materials={materialsList[id]}/>
+                    </>
 
                     </ClickAwayListener>
             </Modal>

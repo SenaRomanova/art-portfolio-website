@@ -48,7 +48,7 @@ function App() {
 
         <Box sx={{display: "flex"}}>
             {vw > 800 ? <Menu/> : null}
-            <Box sx={{bgcolor: '#ffffff65', width: '100%', justifyItems: 'center'}}>
+            <Box sx={{bgcolor: '#ffffff65', width: '100%', justifyItems: 'center', marginLeft: 10}}>
                 <Routes>
                     <Route path="/" element={<Home />}/>
                     <Route path="/anotherlions" element={<AnotherLions />}/>
