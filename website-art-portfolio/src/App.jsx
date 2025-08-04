@@ -6,7 +6,6 @@ import About from "./pages/About.jsx";
 import Home from "./pages/Home.jsx";
 import Box from '@mui/material/Box';
 import { useEffect, useState } from "react";
-import Container from "@mui/material/Container";
 import AnotherLions from "./pages/AnotherLions.jsx";
 import NomadicBeauties from "./pages/NomadicBeauties.jsx";
 import Sirens from "./pages/Sirens.jsx";
@@ -14,10 +13,6 @@ import TheInnerFish from "./pages/TheInnerFish.jsx";
 import ThePenates from "./pages/ThePenates.jsx";
 import TotemsAndTalismans from "./pages/TotemsAndTalismans.jsx";
 import FishCover from "./assets/FishCover.jpg";
-import Template from "./pages/PageTemplate.jsx";
-import OverlayWindow from "./assets/OverlayWindow.jsx";
-import Dialog from "@mui/material/Dialog";
-
 import FishProcess from "./assets/FishProcess.jpg";
 import ExampleDetail1 from "./assets/ExampleDetail1.png";
 import ExampleDetail2 from "./assets/ExampleDetail2.png";
@@ -47,6 +42,7 @@ function App() {
         </Box> */}
 
         <Box sx={{display: "flex"}}>
+            
             {vw > 800 ? <Menu/> : null}
             <Box sx={{bgcolor: '#ffffff65', width: '100%', justifyItems: 'center', marginLeft: 10}}>
                 <Routes>
