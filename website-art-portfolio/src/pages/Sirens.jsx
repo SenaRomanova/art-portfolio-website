@@ -39,12 +39,13 @@ export default function Sirens() {
     const eclipses2Catalogue = [TheBookOfEclipses1, TheBookOfEclipsesDetail11, TheBookOfEclipsesDetail12];
     const theCupOfSelenaCatalogue = [TheCupOfSelena, TheCupOfSelenaDetail];
     const theFishermansWifeCatalogue = [TheFishermansWife, TheFishermansWifeDetail];
+    const theFrogPrincessCatalogue = [TheFrogPrincess];
     const theOwlQueenCatalogue = [TheOwlQueen];
     const mermaid1Catalogue = [ThePolarMermaid, ThePolarMermaidDetail];
     const mermaid2Catalogue = [ThePolarMermaid1, ThePolarMermaidDetail11, ThePolarMermaidDetail12];
     const theShyMandrakeCatalogue = [TheShyMandrake];
 
-    const catalogues = [eclipses1Catalogue, eclipses2Catalogue, theCupOfSelenaCatalogue, theFishermansWifeCatalogue, theOwlQueenCatalogue, mermaid1Catalogue, mermaid2Catalogue, theShyMandrakeCatalogue];
+    const catalogues = [eclipses1Catalogue, eclipses2Catalogue, theCupOfSelenaCatalogue, theFishermansWifeCatalogue, theFrogPrincessCatalogue, theOwlQueenCatalogue, mermaid1Catalogue, mermaid2Catalogue, theShyMandrakeCatalogue];
 
     //create pop-up page descriptions for each artwork:
 
@@ -52,12 +53,13 @@ export default function Sirens() {
     const eclipses2Description = '[TheBookOfEclipses1, TheBookOfEclipsesDetail11, TheBookOfEclipsesDetail12]';
     const theCupOfSelenaDescription = '[TheCupOfSelena, TheCupOfSelenaDetail]';
     const theFishermansWifeDescription = '[TheFishermansWife, TheFishermansWifeDetail]';
+    const theFrogPrincessDescription = '[TheFrogPrincess]';
     const theOwlQueenDescription = '[TheOwlQueen]';
     const mermaid1Description = '[ThePolarMermaid, ThePolarMermaidDetail]';
     const mermaid2Description = '[ThePolarMermaid1, ThePolarMermaidDetail11, ThePolarMermaidDetail12]';
     const theShyMandrakeDescription = '[TheShyMandrake]';
 
-    const descriptions = [eclipses1Description, eclipses2Description, theCupOfSelenaDescription, theFishermansWifeDescription, theOwlQueenDescription, mermaid1Description, mermaid2Description, theShyMandrakeDescription];
+    const descriptions = [eclipses1Description, eclipses2Description, theCupOfSelenaDescription, theFishermansWifeDescription, theFrogPrincessDescription, theOwlQueenDescription, mermaid1Description, mermaid2Description, theShyMandrakeDescription];
 
     //create pop-up page materials for each artwork:
 
@@ -65,12 +67,13 @@ export default function Sirens() {
     const eclipses2Material = '[TheBookOfEclipses1, TheBookOfEclipsesDetail11, TheBookOfEclipsesDetail12]';
     const theCupOfSelenaMaterial = '[TheCupOfSelena, TheCupOfSelenaDetail]';
     const theFishermansWifeMaterial = '[TheFishermansWife, TheFishermansWifeDetail]';
+    const theFrogPrincessMaterial = '[TheFrogPrincess]';
     const theOwlQueenMaterial = '[TheOwlQueen]';
     const mermaid1Material = '[ThePolarMermaid, ThePolarMermaidDetail]';
     const mermaid2Material= '[ThePolarMermaid1, ThePolarMermaidDetail11, ThePolarMermaidDetail12]';
     const theShyMandrakeMaterial = '[TheShyMandrake]';
 
-    const materials = [eclipses1Material, eclipses2Material, theCupOfSelenaMaterial, theFishermansWifeMaterial, theOwlQueenMaterial, mermaid1Material, mermaid2Material, theShyMandrakeMaterial];
+    const materials = [eclipses1Material, eclipses2Material, theCupOfSelenaMaterial, theFishermansWifeMaterial, theFrogPrincessMaterial, theOwlQueenMaterial, mermaid1Material, mermaid2Material, theShyMandrakeMaterial];
 
 
     return(

@@ -2,7 +2,10 @@ import Box from "@mui/material/Box";
 import ScrollableGallery from './ScrollableGallery';
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import CloseIcon from '@mui/icons-material/Close';
+import ArrowDropDownCircleOutlinedIcon from '@mui/icons-material/ArrowDropDownCircleOutlined';
+import { useState, useRef, useEffect } from "react";
+
 
 export default function OverlayWindow({imageList, description, materials, onClose}) {
     
@@ -11,12 +14,34 @@ export default function OverlayWindow({imageList, description, materials, onClos
     const imgUrls = imageList ||[
     ];
 
+    const [hintVisible, setHintVisible] = useState(true);
+
+    const scrollBoxRef = useRef(null);
+
+    useEffect(() => {
+        const box = scrollBoxRef.current;
+
+        function handleScroll() {
+            if (!box) return;
+
+            const { scrollTop, scrollHeight, clientHeight } = box;
+            const isAtBottom = scrollTop + clientHeight >= scrollHeight -1; // -1 for float precision
+
+            if (isAtBottom && hintVisible) {
+                setHintVisible(false);
+            }
+        }
+
+        box?.addEventListener('scroll', handleScroll);
+        return () => box?.removeEventListener('scroll', handleScroll);
+    }, []);
+
 
     const dialogueContent =(
 
         <>
             <Box sx={{display: "flex", width: '100%', justifyContent: 'flex-end', top: 0, position: 'fixed', cursor: 'pointer', padding: 2}}>
-                    <CloseOutlinedIcon onClick ={onClose} fontSize = 'large' sx={{color: 'white'}}/>
+                    <CloseIcon onClick ={onClose} fontSize = 'large' sx={{color: 'white'}}/>
             </Box>
 
             <Stack sx={{display: 'flex', marginTop: '20vh', marginBottom: '10vh', width: '100%', height: '100%'}}>
@@ -42,11 +67,22 @@ export default function OverlayWindow({imageList, description, materials, onClos
                     </Typography>
                     
             </Stack>
+
+            
+            
         </>
     );
     
     return(
+        <>
+            {hintVisible && 
+                (<Box 
+                    sx={{display: 'flex', width: '100%', position: 'fixed', bottom: 30, justifyContent: 'center', zIndex: 2000, padding: 2}}> 
+                    <ArrowDropDownCircleOutlinedIcon fontSize="large" sx={{color: 'black'}}/>
+                </Box>)}
+
             <Box 
+            ref= {scrollBoxRef}
             sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -68,11 +104,13 @@ export default function OverlayWindow({imageList, description, materials, onClos
                 border: '1px solid #858585ff',
             }}>
 
+            
+                {dialogueContent}
                 
 
-                {dialogueContent}
-
             </Box>
+            
+            </>
     );
 
 }
