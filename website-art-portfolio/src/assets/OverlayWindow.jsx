@@ -75,6 +75,10 @@ export default function OverlayWindow({imageList, description, materials, onClos
     
     return(
         <>
+            <Box sx={{display: "flex", width: '100%', justifyContent: 'flex-end', top: 0, position: 'fixed', cursor: 'pointer', padding: 2}}>
+                    <CloseIcon onClick ={onClose} fontSize = 'large' sx={{color: 'white'}}/>
+            </Box>
+            
             {hintVisible && 
                 (<Box 
                     sx={{display: 'flex', width: '100%', position: 'fixed', bottom: 30, justifyContent: 'center', zIndex: 2000, padding: 2}}> 
