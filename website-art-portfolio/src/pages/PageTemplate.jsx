@@ -1,10 +1,6 @@
 
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import FishCover from "../assets/FishCover.jpg";
-import FishProcess from "../assets/FishProcess.jpg";
 import Typography from "@mui/material/Typography";
-import { Link } from 'react-router-dom';
 import { useState } from "react";
 import OverlayWindow from "../assets/OverlayWindow";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
@@ -12,7 +8,6 @@ import Modal from "@mui/material/Modal";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
-import CloseIcon from '@mui/icons-material/Close';
 
 
 export default function Template({thumbnails, thumbnailNames, thumbnailDescriptions, detailedCatalogueList, descriptionList, materialsList}) {
@@ -66,6 +61,9 @@ export default function Template({thumbnails, thumbnailNames, thumbnailDescripti
 
             {thumbnails.map((image, index) => gridElement(image, thumbnailNames[index], thumbnailDescriptions[index], index))}
 
+            
+            
+
             <Modal
                 open={open}
                 onClose={() => setOpen(false)}
@@ -78,12 +76,12 @@ export default function Template({thumbnails, thumbnailNames, thumbnailDescripti
                     position: 'fixed'
                 }}
                 >
+                    
                     <ClickAwayListener>
 
-                    <>
-
-                        <OverlayWindow imageList={detailedCatalogueList[id]} description={descriptionList[id]} materials={materialsList[id]}/>
-                    </>
+                    <Box>
+                        <OverlayWindow imageList={detailedCatalogueList[id]} description={descriptionList[id]} materials={materialsList[id] } onClose={() => setOpen(false)}/>
+                    </Box>
 
                     </ClickAwayListener>
             </Modal>

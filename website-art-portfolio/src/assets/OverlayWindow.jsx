@@ -2,9 +2,9 @@ import Box from "@mui/material/Box";
 import ScrollableGallery from './ScrollableGallery';
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
-import CloseIcon from '@mui/icons-material/Close';  
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
-export default function OverlayWindow({imageList, description, materials}) {
+export default function OverlayWindow({imageList, description, materials, onClose}) {
     
     const width = '90vw';
     const height = '90vh';
@@ -15,13 +15,11 @@ export default function OverlayWindow({imageList, description, materials}) {
     const dialogueContent =(
 
         <>
-            
-            <Stack sx={{display: 'flex', position: 'static', marginTop: '20vh', marginBottom: '10vh', width: '100%', height: '100%'}}>
+            <Box sx={{display: "flex", width: '100%', justifyContent: 'flex-end', top: 0, position: 'fixed', cursor: 'pointer', padding: 2}}>
+                    <CloseOutlinedIcon onClick ={onClose} fontSize = 'large' sx={{color: 'white'}}/>
+            </Box>
 
-                <Box sx={{display: "flex", width: 'inherit', justifyContent: "right",  alignItems: "center", position: 'sticky'}}>
-                    <CloseIcon fontSize = 'large' sx={{color: 'black', bgcolor: 'red'}}/>
-                </Box>
-
+            <Stack sx={{display: 'flex', marginTop: '20vh', marginBottom: '10vh', width: '100%', height: '100%'}}>
                 <Box sx={{display: "flex", width: 'inherit', justifyContent: "left",  alignItems: "center"}}>
                         {imageList && <ScrollableGallery imgUrls={imgUrls}/>}
                 </Box>
