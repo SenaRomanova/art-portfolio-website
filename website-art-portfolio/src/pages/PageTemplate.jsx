@@ -80,15 +80,7 @@ export default function Template({thumbnails, thumbnailNames, thumbnailDescripti
                     
                     <ClickAwayListener>
 
-                        <Box sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            width: '100%',
-                            height: '100%',
-                        }}>
                             <OverlayWindow imageList={detailedCatalogueList[id]} description={descriptionList[id]} materials={materialsList[id] } onClose={() => setOpen(false)}/>
-                        </Box>
 
                     </ClickAwayListener>
             </Modal>

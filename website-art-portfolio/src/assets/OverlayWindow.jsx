@@ -40,9 +40,6 @@ export default function OverlayWindow({imageList, description, materials, onClos
     const dialogueContent =(
 
         <>
-            <Box sx={{display: "flex", width: '100%', justifyContent: 'flex-end', top: 0, position: 'fixed', cursor: 'pointer', padding: 2}}>
-                    <CloseIcon onClick ={onClose} fontSize = 'large' sx={{color: 'white'}}/>
-            </Box>
 
             <Stack sx={{display: 'flex', marginTop: '20vh', marginBottom: '10vh', width: '100%', height: '100%'}}>
                 <Box sx={{display: "flex", width: 'inherit', justifyContent: "left",  alignItems: "center"}}>
@@ -75,7 +72,7 @@ export default function OverlayWindow({imageList, description, materials, onClos
     
     return(
         <>
-            <Box sx={{display: "flex", width: '100%', justifyContent: 'flex-end', top: 0, position: 'fixed', cursor: 'pointer', padding: 2}}>
+            <Box sx={{display: "flex", width: '100%', justifyContent: 'flex-end', top: 0, position: 'fixed', cursor: 'pointer', padding: 2, bgcolor: 'red'}}>
                     <CloseIcon onClick ={onClose} fontSize = 'large' sx={{color: 'white'}}/>
             </Box>
             
