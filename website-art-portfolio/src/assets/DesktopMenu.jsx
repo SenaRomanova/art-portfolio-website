@@ -10,10 +10,10 @@ import Container from '@mui/material/Container';
 import IRLogo from '../assets/IRLogo.PNG';
 
 
-export const drawerWidth = 300;
+export const drawerWidth = '100%';
 export const drawerHeight = 600;
 
-export default function Menu() {
+export default function DesktopMenu() {
 
   const DropdownContent = (
       <Box sx={{paddingTop: '1em', paddingLeft: '3em'}}>
@@ -60,27 +60,24 @@ export default function Menu() {
 
   const DrawerContent = (
     <>
-    {Logo}
+    <Box sx={{display: 'flex', width: drawerWidth, alignItems: 'center', justifyContent: 'center'}}>
 
-    <Box sx={{width: drawerWidth, height: '10vh'}}/>
-
-    <Box sx={{ display: 'flex', width: drawerWidth, alignContent: 'center', paddingLeft: '2.8em'}}>
-      <List sx={{ width: '100%'}}component="nav">
-        <ListItem><GeneralButton buttonName={"about"} to={'/about'} fontSize={'1.2em'} paddingLeft={'1.5em'}/></ListItem>
-        <ListItem><DropdownMenuButton buttonName={'series'} fontSize={'1.2em'} content={DropdownContent} paddingLeft={'1.5em'}/></ListItem>
-        <ListItem><GeneralButton buttonName={"contacts"} to={'/contacts'} fontSize={'1.2em'} paddingLeft={'1.5em'}/></ListItem>
-      </List>
+      <DropdownMenuButton buttonName={'series'} fontSize={'1.2em'} content={DropdownContent}/>
+      <GeneralButton buttonName={"about"} to={'/about'} fontSize={'1.2em'} />
+      <GeneralButton buttonName={"contacts"} to={'/contacts'} fontSize={'1.2em'} />
     </Box>
     </>
   );
 
   return (
-    // <div>
-    //   <Drawer anchor = 'left' variant= 'permanent' sx={{'& .MuiDrawer-paper': {backgroundColor: '#ffffffff'}}}>{DrawerContent}</Drawer>
-    // </div>
-    <Box sx={{width: drawerWidth, height: '80vh', alignSelf: 'flex-start', bgcolor: '#ffffff', position: 'inherit'}}>
-        {DrawerContent}
-    </Box>
+    <>
+      <Box sx={{width: drawerWidth, height: '15vh', bgcolor: '#ffffff'}}>
+          {Logo}
+      </Box>
+      <Box sx={{width: drawerWidth, bgcolor: '#ffffff', margin: 1}}>
+          {DrawerContent}
+      </Box>
+    </>
   );
   
 }

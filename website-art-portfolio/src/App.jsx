@@ -16,6 +16,7 @@ import FishCover from "./assets/FishCover.jpg";
 import FishProcess from "./assets/FishProcess.jpg";
 import ExampleDetail1 from "./assets/ExampleDetail1.png";
 import ExampleDetail2 from "./assets/ExampleDetail2.png";
+import DesktopMenu from "./assets/DesktopMenu.jsx";
 
 function App() {
     const [vw, setVw] = useState(window.innerWidth); //vw is the variable, setVw is the function to set the value of vw
@@ -35,16 +36,10 @@ function App() {
     const content = (
         <>   
 
-        {/* <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", width: '100%', bgcolor: 'grey'}}>
-            <Routes>
-                <Route path="/example" element={<OverlayWindow imageList={imageList} isOpen={true}/>}/>
-            </Routes>
-        </Box> */}
-
         <Box sx={{display: "flex"}}>
             
-            {vw > 800 ? <PhoneMenu/> : null}
-            <Box sx={{bgcolor: '#ffffff65', width: '100%', justifyItems: 'center', marginLeft: 10}}>
+            {/* {vw > 800 ? <PhoneMenu/> : null} */}
+            <Box sx={{bgcolor: '#ffffff65', width: '100%', justifyItems: 'center'}}>
                 <Routes>
                     <Route path="/" element={<Home />}/>
                     <Route path="/anotherlions" element={<AnotherLions />}/>
@@ -64,7 +59,9 @@ function App() {
     
     return( 
         <>
-        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", overflow: 'hidden', bgcolor: '#000000', height: '24vh', borderBottom: '2px solid #ce0000ff'}}>
+        <DesktopMenu/>
+
+        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", overflow: 'hidden', bgcolor: '#000000', height: '24vh', borderTop: '1px solid #ce0000ff', borderBottom: '1px solid #ce0000ff'}}>
             <Box
             component="img"
             src={FishCover}

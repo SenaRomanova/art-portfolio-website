@@ -11,17 +11,17 @@ export default function DropdownMenuButton({ buttonName, content, fontSize, padd
   const toggleMenu = () => setOpen(!open);
 
   return (
-    <Box sx={{width: '100%'}} >
+    <>
       <Button
         disableRipple
         onClick={toggleMenu} variant='text' color='white' sx= {
-        {display: 'inline-flex', 
+        {display: 'flex', 
         fontSize: {fontSize} || '1em', 
         color: '#858585ff',
         alignItems: 'center', 
-        justifyContent: 'left', 
-        width: '100%', 
-        paddingLeft: {paddingLeft} || '4vw', 
+        justifyContent: 'center', 
+        width: '10%', 
+        paddingLeft: {paddingLeft} || 0, 
         textTransform: 'none', 
         '&:hover': 
         {color: '#cb0000ff'}}
@@ -33,8 +33,7 @@ export default function DropdownMenuButton({ buttonName, content, fontSize, padd
 
 
       </Button>
-      
        {open && content}
-    </Box>
+    </>
   );
 }

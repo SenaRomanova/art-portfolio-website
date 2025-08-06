@@ -9,13 +9,13 @@ export default function GeneralButton({buttonName, to, fontSize, paddingLeft}) {
     component={to ? Link : 'button'} //if to prop is provided, component is Link, otherwise use button
     to={to} //if to prop is provided, set the to attribute
     sx= {
-      {display: 'inline-flex', 
+      {display: 'flex',
       fontSize: {fontSize}, 
       color: '#858585ff',
       alignItems: 'center', 
-      justifyContent: 'left', 
-      width: '100%', 
-      paddingLeft: {paddingLeft} || '4vw', 
+      justifyContent: 'center', 
+      width: '10%', 
+      paddingLeft: {paddingLeft} || 0, 
       textTransform: 'none', 
       '&:hover': 
       {color: '#cb0000ff'}}

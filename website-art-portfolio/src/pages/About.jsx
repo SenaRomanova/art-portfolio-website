@@ -8,7 +8,8 @@ import AltaiSun from './../assets/ImageCatalogue/NomadicBeauty/AltaiSun.jpg';
 
 export default function About() {
     return(
-        <>
+        <Container sx={{width: '100%'}}>
+
             <Box sx={{display: 'flex', width: '100%', margin: 3, marginTop: '5vh', justifyContent: 'center'}}>
                 <Typography variant="h2" sx={{display: 'flex', justifyContent: 'left', color: 'black'}}> Meet the Artist </Typography>
             </Box>
@@ -33,7 +34,7 @@ export default function About() {
             </Container>
             
             
-            <Box sx={{display: 'flex', width: '100%', margin: 3, marginBottom: 5, justifyContent: 'Left'}}>
+            <Box sx={{display: 'flex', width: '100%', margin: 3, marginBottom: 5, justifyContent: 'left'}}>
                 <Typography variant="h4" sx={{display: 'flex', justifyContent: 'left', color: 'black'}}> Personal Statement </Typography>
             </Box>
             <Box sx={{display: 'flex', width: '100%', marginBottom: 10, justifyContent: 'left', alignItems: 'center'}}>
@@ -79,11 +80,7 @@ export default function About() {
                 />
 
 
-            </Box>
-
-
-
-            
-        </>
+            </Box>   
+        </Container>
     );
 }
