@@ -72,15 +72,15 @@ export default function OverlayWindow({imageList, description, materials, onClos
     
     return(
         <>
-            <Box sx={{display: "flex", width: '100%', justifyContent: 'flex-end', top: 0, position: 'fixed', cursor: 'pointer', padding: 2, bgcolor: 'red'}}>
+            <Box sx={{display: "flex", width: '100%', justifyContent: 'flex-end', top: 0, position: 'fixed', cursor: 'pointer', padding: 2}}>
                     <CloseIcon onClick ={onClose} fontSize = 'large' sx={{color: 'white'}}/>
             </Box>
             
-            {hintVisible && 
+            {/* {hintVisible && 
                 (<Box 
-                    sx={{display: 'flex', width: '100%', position: 'fixed', bottom: 30, justifyContent: 'center', zIndex: 2000, padding: 2}}> 
+                    sx={{display: 'flex', width: '100%', position: 'fixed', bottom: '8vh', justifyContent: 'center', alignItems: 'center', zIndex: 2000, padding: 2}}> 
                     <ArrowDropDownCircleOutlinedIcon fontSize="large" sx={{color: 'black'}}/>
-                </Box>)}
+                </Box>)} */}
 
             <Box 
             ref= {scrollBoxRef}
