@@ -34,11 +34,7 @@ function App() {
         ]);
 
     const content = (
-        <>   
-
-        <Box sx={{display: "flex"}}>
-            
-            {/* {vw > 800 ? <PhoneMenu/> : null} */}
+        <Box sx={{display: "flex", width: '100%'}}>
             <Box sx={{bgcolor: '#ffffff65', width: '100%', justifyItems: 'center'}}>
                 <Routes>
                     <Route path="/" element={<Home />}/>
@@ -53,15 +49,15 @@ function App() {
                 </Routes>
             </Box>
         </Box>
-        </>
     );
 
     
     return( 
         <>
+
         <DesktopMenu/>
 
-        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", overflow: 'hidden', bgcolor: '#000000', height: '24vh', borderTop: '1px solid #ce0000ff', borderBottom: '1px solid #ce0000ff'}}>
+        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", overflow: 'hidden', bgcolor: '#000000', height: '40vh', borderTop: '1px solid #ce0000ff', borderBottom: '1px solid #ce0000ff'}}>
             <Box
             component="img"
             src={FishCover}

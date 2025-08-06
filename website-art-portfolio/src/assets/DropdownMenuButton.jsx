@@ -28,8 +28,8 @@ export default function DropdownMenuButton({ buttonName, content, fontSize, padd
       }>
         
         {buttonName} {/* move this lower to have the icon be on the left */}
-        {!open && <KeyboardArrowRightIcon sx={{ ml: 1 }}/>}
-        {open && (<KeyboardArrowDownIcon sx={{ ml: 1 }}/>)} 
+        {!open && <KeyboardArrowRightIcon fontSize='small' sx={{ ml: 1 }}/>}
+        {open && (<KeyboardArrowDownIcon fontSize='small' sx={{ ml: 1 }}/>)} 
 
 
       </Button>

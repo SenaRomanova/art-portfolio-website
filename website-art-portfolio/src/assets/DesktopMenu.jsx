@@ -62,9 +62,9 @@ export default function DesktopMenu() {
     <>
     <Box sx={{display: 'flex', width: drawerWidth, alignItems: 'center', justifyContent: 'center'}}>
 
-      <DropdownMenuButton buttonName={'series'} fontSize={'1.2em'} content={DropdownContent}/>
-      <GeneralButton buttonName={"about"} to={'/about'} fontSize={'1.2em'} />
-      <GeneralButton buttonName={"contacts"} to={'/contacts'} fontSize={'1.2em'} />
+      <DropdownMenuButton buttonName={'series'} fontSize={'1em'} content={DropdownContent}/>
+      <GeneralButton buttonName={"about"} to={'/about'} fontSize={'1em'} />
+      <GeneralButton buttonName={"contacts"} to={'/contacts'} fontSize={'1em'} />
     </Box>
     </>
   );

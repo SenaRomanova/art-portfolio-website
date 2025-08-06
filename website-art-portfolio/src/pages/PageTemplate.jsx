@@ -17,7 +17,7 @@ export default function Template({thumbnails, thumbnailNames, thumbnailDescripti
 
     const gridElement = (image, name, description, id) => (
         <>
-            <Box sx={{width: '90%', height: '20vh', margin: 2, borderRadius: 1, display: 'flex', alignItems: 'center', '&:hover': {borderColor: 'red'}, 
+            <Box sx={{width: '100%', height: '20vh', margin: 2, borderRadius: 1, display: 'flex', alignItems: 'center', '&:hover': {borderColor: 'red'}, 
                 cursor: "pointer"}}
                 onClick={() => {
                     setID(id);
@@ -51,7 +51,7 @@ export default function Template({thumbnails, thumbnailNames, thumbnailDescripti
             </Box>
             
             
-            <Divider variant="middle" sx={{width: '90%'}}/>
+            <Divider variant="middle" sx={{width: '100%'}}/>
         </>
     );
 
@@ -59,6 +59,7 @@ export default function Template({thumbnails, thumbnailNames, thumbnailDescripti
     return(
         <>
 
+            
             {thumbnails.map((image, index) => gridElement(image, thumbnailNames[index], thumbnailDescriptions[index], index))}
 
             
