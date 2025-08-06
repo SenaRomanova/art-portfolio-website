@@ -1,5 +1,5 @@
 
-import Menu, {drawerWidth} from "./assets/Menu.jsx";
+import PhoneMenu, {drawerWidth} from "./assets/PhoneMenu.jsx";
 import { Route, Routes } from "react-router-dom";
 import Contacts from "./pages/Contacts.jsx";
 import About from "./pages/About.jsx";
@@ -43,7 +43,7 @@ function App() {
 
         <Box sx={{display: "flex"}}>
             
-            {vw > 800 ? <Menu/> : null}
+            {vw > 800 ? <PhoneMenu/> : null}
             <Box sx={{bgcolor: '#ffffff65', width: '100%', justifyItems: 'center', marginLeft: 10}}>
                 <Routes>
                     <Route path="/" element={<Home />}/>
