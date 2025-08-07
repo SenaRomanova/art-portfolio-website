@@ -1,83 +1,111 @@
+import Box from "@mui/material/Box";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import GeneralButton from "./GeneralButton";
+import DropdownMenuButton from "./DropdownMenuButton";
+import Typography from "@mui/material/Typography";
+import "../assets/IRLogo.PNG";
+import Container from "@mui/material/Container";
+import ArtistLogo from "./Logo";
 
-import Box from '@mui/material/Box';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import GeneralButton from './GeneralButton';
-import DropdownMenuButton from './DropdownMenuButton';
-import Typography from '@mui/material/Typography';
-import '../assets/IRLogo.PNG'; 
-import Container from '@mui/material/Container';
-import IRLogo from '../assets/IRLogo.PNG';
-
-
-export const drawerWidth = '100%';
+export const drawerWidth = "100%";
 export const drawerHeight = 600;
 
 export default function DesktopMenu() {
-
   const DropdownContent = (
-      <Box>
-            <GeneralButton buttonName= {'Nomadic Beauties'} to={'/nomadicbeauties'} fontSize={'1em'} />
-            <GeneralButton buttonName= {'The Inner Fish'} to={'/theinnerfish'} fontSize={'1em'} />
-            <GeneralButton buttonName= {'Totems & Talismans'} to={'/totemsandtalismans'} fontSize={'1em'} />
-            <GeneralButton buttonName= {'The Moon and Sirens'} to={'/sirens'} fontSize={'1em'} />
-            <GeneralButton buttonName= {'The Penates (The Antique)'} to={'/thepenates'} fontSize={'1em'} />
-            <GeneralButton buttonName= {'Another Lions'} to={'/anotherlions'} fontSize={'1em'} />
-      </Box>);
-
-  const Logo = (
-    <Container sx={{display: 'flex', alignItems: 'center', width: drawerWidth, p: 2.5}}>
-      <Box
-          component="img"
-          src={IRLogo}
-          alt="Logo"
-          sx={{
-            paddingBottom: '0.5em',
-            width: '55px',
-            height: 'auto', 
-          }}/>
-
-      <Box sx={{display: 'flex', flexDirection: 'column', width: 'inherit', paddingLeft: '0.5em'}}>
-        <Box sx={{display: 'flex', width: 'inherit', flexDirection: 'column'}}>
-          <Typography variant="h5" sx={{ fontWeight: 100, textAlign: 'left', color: 'grey', wordSpacing: '0.7em'}}>
-            I N N A
-          </Typography>
-        </Box>
-        <Box sx={{width: '200px' , height: '2px', bgcolor: 'red'}}/>
-        <Box sx={{display: 'flex', width: 'inherit', flexDirection: 'column'}}>
-          <Typography variant="h4" sx={{fontWeight: 200, textAlign: 'left', color: '#000000'}}>
-            ROMANOVA
-          </Typography>
-        </Box>
-        <Box sx={{display: 'flex', width: 'inherit', flexDirection: 'column'}}>
-          <Typography sx={{fontWeight: 100, fontSize: '1.5em', lineHeight: 0.5, textAlign: 'left', color: 'grey'}}>
-            artist
-          </Typography>
-        </Box>
-      </Box>
-    </Container>
-  )
+    <Box>
+      <GeneralButton
+        buttonName={"Nomadic Beauties"}
+        to={"/nomadicbeauties"}
+        fontSize={"1em"}
+      />
+      <GeneralButton
+        buttonName={"The Inner Fish"}
+        to={"/theinnerfish"}
+        fontSize={"1em"}
+      />
+      <GeneralButton
+        buttonName={"Totems & Talismans"}
+        to={"/totemsandtalismans"}
+        fontSize={"1em"}
+      />
+      <GeneralButton
+        buttonName={"The Moon and Sirens"}
+        to={"/sirens"}
+        fontSize={"1em"}
+      />
+      <GeneralButton
+        buttonName={"The Penates (The Antique)"}
+        to={"/thepenates"}
+        fontSize={"1em"}
+      />
+      <GeneralButton
+        buttonName={"Another Lions"}
+        to={"/anotherlions"}
+        fontSize={"1em"}
+      />
+    </Box>
+  );
 
   const DrawerContent = (
     <>
-    <Box sx={{display: 'flex', width: drawerWidth, alignItems: 'center', justifyContent: 'center'}}>
-      <Box sx={{width: '10%'}}> <GeneralButton buttonName={"home"} to={'/'} fontSize={'1em'} /> </Box>
-      <Box sx={{width: '10%'}}> <DropdownMenuButton buttonName={'series'} fontSize={'1em'} content={DropdownContent}/> </Box>
-      <Box sx={{width: '10%'}}> <GeneralButton buttonName={"about"} to={'/about'} fontSize={'1em'} /> </Box>
-      <Box sx={{width: '10%'}}><GeneralButton buttonName={"contacts"} to={'/contacts'} fontSize={'1em'} />  </Box>
-    </Box>
+      <Box
+        sx={{
+          display: "flex",
+          width: drawerWidth,
+          alignItems: "center",
+          justifyContent: "center",
+          bgcolor: "rgb(240, 241, 244)",
+        }}
+      >
+        <Box sx={{ width: "10%" }}>
+          {" "}
+          <GeneralButton buttonName={"home"} to={"/"} fontSize={"1em"} />{" "}
+        </Box>
+        <Box sx={{ width: "10%" }}>
+          {" "}
+          <DropdownMenuButton
+            buttonName={"series"}
+            fontSize={"1em"}
+            content={DropdownContent}
+          />{" "}
+        </Box>
+        <Box sx={{ width: "10%" }}>
+          {" "}
+          <GeneralButton
+            buttonName={"about"}
+            to={"/about"}
+            fontSize={"1em"}
+          />{" "}
+        </Box>
+        <Box sx={{ width: "10%" }}>
+          <GeneralButton
+            buttonName={"contacts"}
+            to={"/contacts"}
+            fontSize={"1em"}
+          />{" "}
+        </Box>
+      </Box>
     </>
   );
 
   return (
     <>
-      <Box sx={{width: drawerWidth, height: '15vh', bgcolor: '#ffffff', justifyItems: 'center'}}>
-          {Logo}
+      <Box
+        sx={{
+          display: "flex",
+          width: drawerWidth,
+          height: "15vh",
+          justifyItems: "flex-start",
+          alignItems: "center",
+        }}
+      >
+        <Box sx={{ paddingLeft: 3 }}>
+          <ArtistLogo />
+        </Box>
       </Box>
-      <Box sx={{width: drawerWidth, bgcolor: '#ffffff', margin: 1}}>
-          {DrawerContent}
-      </Box>
+
+      <Box sx={{ width: drawerWidth, bgcolor: "#ffffff" }}>{DrawerContent}</Box>
     </>
   );
-  
 }

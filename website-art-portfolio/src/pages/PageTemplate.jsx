@@ -81,20 +81,26 @@ export default function Template({
           margin: 1,
           width: "auto",
           borderRadius: 1,
-          height: 200,
+          height: "50%",
           objectFit: "cover",
           overflow: "hidden",
           alignContent: "center",
           justifySelf: "center",
         }}
       />
-      <CardContent sx={{ flexGrow: 1, width: "100%" }}>
-        <Typography variant="h5" sx={{ textAlign: "right", color: "grey" }}>
+
+      <CardContent
+        sx={{ flexGrow: 1, width: "100%", alignContent: "flex-end" }}
+      >
+        <Typography
+          variant="h5"
+          sx={{ width: "100%", textAlign: "right", color: "grey" }}
+        >
           {name}
         </Typography>
         <Typography
           variant="subtitle1"
-          sx={{ textAlign: "right", color: "grey" }}
+          sx={{ textAlign: "right", width: "100%", color: "grey" }}
         >
           {description}
         </Typography>
@@ -127,8 +133,8 @@ export default function Template({
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-                  height: "100%",
-                  width: 280,
+                  height: 500,
+                  width: 300,
                 }}
               >
                 {gridElement(

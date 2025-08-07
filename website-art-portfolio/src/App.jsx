@@ -1,10 +1,9 @@
-
-import PhoneMenu, {drawerWidth} from "./assets/PhoneMenu.jsx";
+import PhoneMenu, { drawerWidth } from "./assets/PhoneMenu.jsx";
 import { Route, Routes } from "react-router-dom";
 import Contacts from "./pages/Contacts.jsx";
 import About from "./pages/About.jsx";
 import Home from "./pages/Home.jsx";
-import Box from '@mui/material/Box';
+import Box from "@mui/material/Box";
 import { useEffect, useState } from "react";
 import AnotherLions from "./pages/AnotherLions.jsx";
 import NomadicBeauties from "./pages/NomadicBeauties.jsx";
@@ -19,49 +18,42 @@ import ExampleDetail2 from "./assets/ExampleDetail2.png";
 import DesktopMenu from "./assets/DesktopMenu.jsx";
 
 function App() {
-    const [vw, setVw] = useState(window.innerWidth); //vw is the variable, setVw is the function to set the value of vw
-    useEffect(() => {  
-        const handleResize = () => setVw(window.innerWidth);//set the value of vw to the current window width
-        window.addEventListener("resize", handleResize); //listens to the resize event and calls handleResize when the window is resized
-        return () => window.removeEventListener("resize", handleResize); //cleanup function to remove the event listener when the component is unmounted
-    }, []);
+  const [vw, setVw] = useState(window.innerWidth); //vw is the variable, setVw is the function to set the value of vw
+  useEffect(() => {
+    const handleResize = () => setVw(window.innerWidth); //set the value of vw to the current window width
+    window.addEventListener("resize", handleResize); //listens to the resize event and calls handleResize when the window is resized
+    return () => window.removeEventListener("resize", handleResize); //cleanup function to remove the event listener when the component is unmounted
+  }, []);
 
-    const imageList = ([
-        FishCover,
-        FishProcess,
-        ExampleDetail1,
-        ExampleDetail2
-        ]);
+  const content = (
+    <Box
+      sx={{
+        bgcolor: "#ffffff65",
+        width: "100%",
+        justifyItems: "center",
+      }}
+    >
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/anotherlions" element={<AnotherLions />} />
+        <Route path="/nomadicbeauties" element={<NomadicBeauties />} />
+        <Route path="/sirens" element={<Sirens />} />
+        <Route path="/theinnerfish" element={<TheInnerFish />} />
+        <Route path="/thepenates" element={<ThePenates />} />
+        <Route path="/totemsandtalismans" element={<TotemsAndTalismans />} />
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Box>
+  );
 
-    const content = (
-            <Box sx={{bgcolor: '#ffffff65', width: '100%', justifyItems: 'center', padding: '3vh'}}>
-                <Routes>
-                    <Route path="/" element={<Home />}/>
-                    <Route path="/anotherlions" element={<AnotherLions />}/>
-                    <Route path="/nomadicbeauties" element={<NomadicBeauties />}/>
-                    <Route path="/sirens" element={<Sirens />}/>
-                    <Route path="/theinnerfish" element={<TheInnerFish />}/>
-                    <Route path="/thepenates" element={<ThePenates />}/>
-                    <Route path="/totemsandtalismans" element={<TotemsAndTalismans />}/>
-                    <Route path="/contacts" element={<Contacts />}/>
-                    <Route path="/about" element={<About />}/>
-                </Routes>
-            </Box>
-    );
+  return (
+    <>
+      {vw > 800 ? <DesktopMenu /> : <PhoneMenu />}
 
-    
-    return( 
-        <>
-
-        <DesktopMenu/>
-
-        <Box 
-            sx={{ display: 'flex', maxWidth: 1500, margin: '0 auto' }}>
-            {content}
-        </Box>
+      <Box sx={{ display: "flex" }}>{content}</Box>
     </>
-        
-    );
+  );
 }
 
-export default App
+export default App;
