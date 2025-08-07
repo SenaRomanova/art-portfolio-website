@@ -3,18 +3,31 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { useRef } from 'react';
 import GeneralButton from './GeneralButton';
 
 export default function DropdownMenuButton({ buttonName, content, fontSize, paddingLeft }) {
   const [open, setOpen] = React.useState(false);
 
-  const toggleMenu = () => setOpen(!open);
+  const closeTimeoutRef = useRef(null);
+  const handleMouseEnter = () => {
+    clearTimeout(closeTimeoutRef.current);
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+  closeTimeoutRef.current = setTimeout(() => {
+    setOpen(false);
+    }, 300);
+  };
 
   return (
     <>
       <Button
         disableRipple
-        onClick={toggleMenu} variant='text' color='white' sx= {
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        variant='text' color='white' sx= {
         {display: 'flex', 
         fontSize: {fontSize} || '1em', 
         color: '#858585ff',
@@ -33,7 +46,11 @@ export default function DropdownMenuButton({ buttonName, content, fontSize, padd
 
 
       </Button>
-       {open && content}
+
+       {open && <Box 
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        sx={{bgcolor: 'white', position: 'absolute', zIndex: 500, borderRadius: 2}}> {content} </Box>}
     </>
   );
 }

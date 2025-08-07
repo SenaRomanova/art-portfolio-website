@@ -16,7 +16,7 @@ export const drawerHeight = 600;
 export default function DesktopMenu() {
 
   const DropdownContent = (
-      <Box sx={{paddingTop: '1em', paddingLeft: '3em'}}>
+      <Box>
             <GeneralButton buttonName= {'Nomadic Beauties'} to={'/nomadicbeauties'} fontSize={'1em'} />
             <GeneralButton buttonName= {'The Inner Fish'} to={'/theinnerfish'} fontSize={'1em'} />
             <GeneralButton buttonName= {'Totems & Talismans'} to={'/totemsandtalismans'} fontSize={'1em'} />
@@ -61,17 +61,17 @@ export default function DesktopMenu() {
   const DrawerContent = (
     <>
     <Box sx={{display: 'flex', width: drawerWidth, alignItems: 'center', justifyContent: 'center'}}>
-
-      <DropdownMenuButton buttonName={'series'} fontSize={'1em'} content={DropdownContent}/>
-      <GeneralButton buttonName={"about"} to={'/about'} fontSize={'1em'} />
-      <GeneralButton buttonName={"contacts"} to={'/contacts'} fontSize={'1em'} />
+      <Box sx={{width: '10%'}}> <GeneralButton buttonName={"home"} to={'/'} fontSize={'1em'} /> </Box>
+      <Box sx={{width: '10%'}}> <DropdownMenuButton buttonName={'series'} fontSize={'1em'} content={DropdownContent}/> </Box>
+      <Box sx={{width: '10%'}}> <GeneralButton buttonName={"about"} to={'/about'} fontSize={'1em'} /> </Box>
+      <Box sx={{width: '10%'}}><GeneralButton buttonName={"contacts"} to={'/contacts'} fontSize={'1em'} />  </Box>
     </Box>
     </>
   );
 
   return (
     <>
-      <Box sx={{width: drawerWidth, height: '15vh', bgcolor: '#ffffff'}}>
+      <Box sx={{width: drawerWidth, height: '15vh', bgcolor: '#ffffff', justifyItems: 'center'}}>
           {Logo}
       </Box>
       <Box sx={{width: drawerWidth, bgcolor: '#ffffff', margin: 1}}>

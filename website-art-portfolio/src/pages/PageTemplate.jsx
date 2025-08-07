@@ -1,5 +1,6 @@
 
 import Box from "@mui/material/Box";
+import { Card, CardContent } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
 import OverlayWindow from "../assets/OverlayWindow";
@@ -8,6 +9,7 @@ import Modal from "@mui/material/Modal";
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
+import Grid from "@mui/material/Grid";
 
 
 export default function Template({thumbnails, thumbnailNames, thumbnailDescriptions, detailedCatalogueList, descriptionList, materialsList}) {
@@ -16,51 +18,75 @@ export default function Template({thumbnails, thumbnailNames, thumbnailDescripti
     const [id, setID] = useState(-1);
 
     const gridElement = (image, name, description, id) => (
-        <>
-            <Box sx={{width: '100%', height: '20vh', margin: 2, borderRadius: 1, display: 'flex', alignItems: 'center', '&:hover': {borderColor: 'red'}, 
-                cursor: "pointer"}}
-                onClick={() => {
-                    setID(id);
-                    setOpen(true); 
-                  }}>
-                
-                <Container sx={{display: 'flex', width: '20%', alignContent: 'center', justifyContent: 'center'}}>
-                    <Box
-                        component="img"
-                        src={image}
-                        alt="Image"
-                        sx={{
-                            margin: 1,
-                            paddingBottom: '0.5em',
-                            width: 'auto',
-                            borderRadius: 1,
-                            height: '18vh', 
-                            alignContent: 'center',
-                            justifyContent: 'center',
-                            position: 'static',
-                        }}/>
-                </Container>
-                <Stack sx={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center', padding: 2}}>
-                    <Typography variant="h4" sx={{ width: '90%', height: '90%', textAlign: 'right', color: 'black'}}>
-                        {name}
-                    </Typography>
-                    <Typography variant="h6" sx={{ width: '90%', height: '90%', textAlign: 'right', color: 'black'}}>
-                        {description}
-                    </Typography>
+        <Card  sx={{ minWidth: 200 }}>
+            <CardContent sx={{height: '100%', display: 'flex', flexDirection: 'column'}}>
+
+                <Stack sx={{width: '100%', height: '100%', display: 'flex', cursor: "pointer"}}
+                    onClick={() => {
+                        setID(id);
+                        setOpen(true); 
+                    }}>
+                    
+                    
+                        <Box sx={{display: 'flex', width: '100%', justifyContent: 'center'}}>
+                            <Box
+                            component="img"
+                            src={image}
+                            alt="Image"
+                            sx={{
+                                width: '90%',
+                                borderRadius: 1,
+                                height: 'auto', 
+                                alignContent: 'center',
+                                justifyContent: 'center',
+                            }}/>
+                        </Box>
+
+                    <Stack sx={{display: 'flex', width: '100%', height: '100%', justifyContent: 'flex-end'}}>
+                        <Typography variant="h5" sx={{ textAlign: 'right', color: 'grey'}}>
+                            {name}
+                        </Typography>
+                        <Typography variant="h6" sx={{ textAlign: 'right', color: 'grey'}}>
+                            {description}
+                        </Typography>
+                    </Stack>
+
                 </Stack>
-            </Box>
-            
-            
-            <Divider variant="middle" sx={{width: '100%'}}/>
-        </>
+                
+                <Divider variant="middle" sx={{width: '100%', justifySelf: 'center'}}/>
+            </CardContent>
+        </Card>
     );
 
 
     return(
         <>
 
+            {/* <Box sx={{width: '100%'}}>
+                <Grid container spacing={1} columnSpacing={1} sx={{justifyContent: 'center', alignContent: 'center'}}>
+                    {thumbnails.map((image, index) => (
+                        <Grid item xs={12} md={6} key={index}>
+                        {gridElement(
+                            image,
+                            thumbnailNames[index],
+                            thumbnailDescriptions[index],
+                            index
+                        )}
+                        </Grid>
+                    ))}
+                </Grid>
+            </Box> */}
+            <Box sx={{width: '100%'}}>
+                <Grid container spacing={1} columnSpacing={1} sx={{justifyContent: 'center', alignContent: 'center'}}>
+                        <Grid size={ {xs: 12, md: 5, lg: 4} }>
+                            <Typography variant="h5" component="div" color='black'>heh</Typography>
+                            <Typography variant="h5" component="div" color='black'>heh</Typography>
+                            <Typography variant="h5" component="div" color='black'>heh</Typography>
+                            <Typography variant="h5" component="div" color='black'>heh</Typography>
+                        </Grid>
+                </Grid>
+            </Box>
             
-            {thumbnails.map((image, index) => gridElement(image, thumbnailNames[index], thumbnailDescriptions[index], index))}
 
             
             

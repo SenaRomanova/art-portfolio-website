@@ -34,8 +34,7 @@ function App() {
         ]);
 
     const content = (
-        <Box sx={{display: "flex", width: '100%'}}>
-            <Box sx={{bgcolor: '#ffffff65', width: '100%', justifyItems: 'center'}}>
+            <Box sx={{bgcolor: '#ffffff65', width: '100%', justifyItems: 'center', padding: '3vh'}}>
                 <Routes>
                     <Route path="/" element={<Home />}/>
                     <Route path="/anotherlions" element={<AnotherLions />}/>
@@ -48,7 +47,6 @@ function App() {
                     <Route path="/about" element={<About />}/>
                 </Routes>
             </Box>
-        </Box>
     );
 
     
@@ -57,24 +55,8 @@ function App() {
 
         <DesktopMenu/>
 
-        <Box sx={{display: "flex", justifyContent: "center", alignItems: "center", overflow: 'hidden', bgcolor: '#000000', height: '40vh', borderTop: '1px solid #ce0000ff', borderBottom: '1px solid #ce0000ff'}}>
-            <Box
-            component="img"
-            src={FishCover}
-            alt="Logo"
-            sx={{
-                paddingBottom: '0.5em',
-                width: 'auto',
-                height: '60vw', 
-                alignContent: 'center',
-                justifyContent: 'center',
-                position: 'relative',
-                top: '50px'
-            }}/>
-        </Box>
-
         <Box 
-        sx={{ maxWidth: 1500, margin: '0 auto' }}>
+            sx={{ display: 'flex', maxWidth: 1500, margin: '0 auto' }}>
             {content}
         </Box>
     </>
