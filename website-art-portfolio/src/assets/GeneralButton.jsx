@@ -6,6 +6,7 @@ export default function GeneralButton({buttonName, to, fontSize, paddingLeft}) {
   <Button 
     disableRipple 
     variant='text' 
+    color='white'
     component={to ? Link : 'button'} //if to prop is provided, component is Link, otherwise use button
     to={to} //if to prop is provided, set the to attribute
     sx= {
