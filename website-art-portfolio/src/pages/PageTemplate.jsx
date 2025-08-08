@@ -40,6 +40,9 @@ export default function Template({
         "&:hover img": {
             transform: "scale(1.04)", //zoom amt
           },
+        "&:hover .hoverText": {
+          color: "rgba(65, 65, 65, 1)",  // example: change text color
+        },
       }}
     >
       <CardMedia
@@ -66,18 +69,21 @@ export default function Template({
       >
         <Typography
           variant="h5"
+          className="hoverText"
           sx={{ width: "100%", textAlign: "right", color: "grey" }}
         >
           {name}
         </Typography>
         <Typography
           variant="h6"
+          className="hoverText"
           sx={{ width: "100%", textAlign: "right", color: "grey" }}
         >
           {price}
         </Typography>
         <Typography
           variant="subtitle1"
+          className="hoverText"
           sx={{ textAlign: "right", width: "100%", color: "grey" }}
         >
           {description}

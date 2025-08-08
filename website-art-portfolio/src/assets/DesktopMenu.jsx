@@ -56,7 +56,7 @@ export default function DesktopMenu() {
           width: drawerWidth,
           alignItems: "center",
           justifyContent: "center",
-          bgcolor: "rgb(240, 241, 244)",
+          // bgcolor: "rgb(240, 241, 244)",
         }}
       >
         <Box sx={{ width: "10%" }}>

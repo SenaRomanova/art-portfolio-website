@@ -72,7 +72,10 @@ function App() {
               bgcolor: "#000000",
               height: "40vh",
               borderTop: "2px solid #ce0000ff",
-              borderBottom: "2px solid #ce0000ff"
+              borderBottom: "2px solid #ce0000ff",
+              "&:hover img": {
+                  transform: "scale(1.02)", //zoom amt
+                },
             }}
           >
             <Box
@@ -86,6 +89,8 @@ function App() {
                 justifyContent: "center",
                 position: "relative",
                 top: 20,
+                transition: "transform 0.8s ease",//zoom time
+                transformOrigin: "center center",
               }}
             />
           </Box>
