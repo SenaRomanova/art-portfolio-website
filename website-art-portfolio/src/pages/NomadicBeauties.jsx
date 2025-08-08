@@ -49,7 +49,7 @@ export default function NomadicBeauties() {
 
     return(
         <>
-            <Box sx={{display: 'flex', width: '100%', margin: 3, marginBottom: 0, justifyContent: 'left'}}>
+            <Box sx={{display: 'flex', margin: 3}}>
                 <Typography variant="h3" sx={{display: 'flex', justifyContent: 'left', color: 'black'}}> Nomadic Beauties </Typography>
             </Box>
 

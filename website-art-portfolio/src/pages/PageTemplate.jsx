@@ -80,7 +80,6 @@ export default function Template({
         sx={{
           margin: 1,
           width: "auto",
-          borderRadius: 1,
           height: "50%",
           objectFit: "cover",
           overflow: "hidden",
@@ -133,7 +132,7 @@ export default function Template({
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-                  height: 500,
+                  height: 400,
                   width: 300,
                 }}
               >

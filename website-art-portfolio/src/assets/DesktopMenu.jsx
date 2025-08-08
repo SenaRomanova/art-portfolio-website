@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import "../assets/IRLogo.PNG";
 import Container from "@mui/material/Container";
 import ArtistLogo from "./Logo";
+import Socials from "./Socials";
 
 export const drawerWidth = "100%";
 export const drawerHeight = 600;
@@ -96,13 +97,18 @@ export default function DesktopMenu() {
           display: "flex",
           width: drawerWidth,
           height: "15vh",
-          justifyItems: "flex-start",
+          justifyContent: 'space-between',
           alignItems: "center",
         }}
       >
-        <Box sx={{ paddingLeft: 3 }}>
+        <Box sx={{ width: '30%', paddingLeft: 3 }}>
           <ArtistLogo />
         </Box>
+
+        <Box sx={{ width: '70%', padding: 3, justifyItems: 'right'}}>
+            <Socials/>
+        </Box>
+        
       </Box>
 
       <Box sx={{ width: drawerWidth, bgcolor: "#ffffff" }}>{DrawerContent}</Box>

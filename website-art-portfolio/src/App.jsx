@@ -16,6 +16,7 @@ import FishProcess from "./assets/FishProcess.jpg";
 import ExampleDetail1 from "./assets/ExampleDetail1.png";
 import ExampleDetail2 from "./assets/ExampleDetail2.png";
 import DesktopMenu from "./assets/DesktopMenu.jsx";
+import Footer from "./assets/Footer.jsx";
 
 function App() {
   const [vw, setVw] = useState(window.innerWidth); //vw is the variable, setVw is the function to set the value of vw
@@ -52,6 +53,8 @@ function App() {
       {vw > 800 ? <DesktopMenu /> : <PhoneMenu />}
 
       <Box sx={{ display: "flex" }}>{content}</Box>
+      <Box sx={{display: 'flex', bgcolor: 'white', width: '100%', height: '25vh'}}/>
+      <Box sx={{ display: "flex" }}><Footer/></Box>
     </>
   );
 }

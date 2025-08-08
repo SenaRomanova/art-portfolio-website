@@ -86,10 +86,7 @@ export default function TheInnerFish() {
       <Box
         sx={{
           display: "flex",
-          width: "100%",
           margin: 3,
-          marginBottom: 0,
-          justifyContent: "left",
         }}
       >
         <Typography
