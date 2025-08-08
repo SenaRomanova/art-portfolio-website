@@ -15,6 +15,7 @@ import TheFarLands from '../assets/ImageCatalogue/Totems&Talismans/TheFarLands.j
 import TheOceanDepthsLeft from '../assets/ImageCatalogue/Totems&Talismans/TheOceanDepthsLeft.JPG';
 import TheOceanDepthsRight from '../assets/ImageCatalogue/Totems&Talismans/TheOceanDepthsRight.JPG';
 import TheOceanDepthsDetail from '../assets/ImageCatalogue/Totems&Talismans/TheOceanDepthsDetail.JPG';
+import PageHeader from "../assets/PageHeading";
 
 export default function TotemsAndTalismans() {
 //add all the thumbnails: 
@@ -24,6 +25,7 @@ export default function TotemsAndTalismans() {
     const thumbnailNames = ['Holey Shell', 'Ode to the Silkworm', 'Talisman', 'The Far Lands', 'The Ocean Depths'];
 
     const thumbnailDescriptions = ['Holey Shell Description', 'Ode to the Silkworm Description', 'Talisman Description', 'The Far Lands Description', 'The Ocean Depths Description'];
+    const priceList = ['$5,200.00', '$5,200.00', '$10,000.00', '$5,200.00', '$10,000.00']
 
     //create pop-up page content for each artwork:
     const holeyShellCatalogue = [HoleyShell, HoleyShellDetail];
@@ -55,9 +57,7 @@ export default function TotemsAndTalismans() {
 
     return(
         <>
-            <Box sx={{display: 'flex', margin: 3}}>
-                <Typography variant="h3" sx={{display: 'flex', justifyContent: 'left', color: 'black'}}> Totems and Talismans </Typography>
-            </Box>
+            <PageHeader name = "Totems and Talismans"/> 
 
 
             <Divider variant="middle" sx={{width: '90%', margin: 4}}/>
@@ -66,6 +66,7 @@ export default function TotemsAndTalismans() {
                 thumbnails={thumbnails} 
                 thumbnailNames={thumbnailNames}
                 thumbnailDescriptions = {thumbnailDescriptions} 
+                prices={priceList}
                 detailedCatalogueList={catalogues}
                 descriptionList={descriptions}
                 materialsList={materials}

@@ -5,27 +5,12 @@ import Avatar from "@mui/material/Avatar";
 import InnaRomanova from "./../assets/ImageCatalogue/about me/460124_376771295714809_1735044073_o.jpg";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import AltaiSun from "./../assets/ImageCatalogue/NomadicBeauty/AltaiSun.jpg";
+import PageHeader from "../assets/PageHeading";
 
 export default function About() {
   return (
-    <Container sx={{ width: "100%" }}>
-      <Box
-        sx={{
-          display: "flex",
-          width: "100%",
-          margin: 3,
-          marginTop: "5vh",
-          justifyContent: "center",
-        }}
-      >
-        <Typography
-          variant="h2"
-          sx={{ display: "flex", justifyContent: "left", color: "black" }}
-        >
-          {" "}
-          Meet the Artist{" "}
-        </Typography>
-      </Box>
+    <Box sx={{ width: "100%", padding: 5, justifyItems: 'center'}}>
+     <PageHeader name={"Meet the Artist"}/>
 
       <Container
         sx={{
@@ -69,12 +54,11 @@ export default function About() {
         </Box>
       </Container>
 
-      <Box>
+      <Container>
         <Box
           sx={{
             display: "flex",
             width: "100%",
-            margin: 3,
             marginBottom: 5,
             justifyContent: "left",
           }}
@@ -115,7 +99,6 @@ export default function About() {
           sx={{
             display: "flex",
             width: "100%",
-            margin: 3,
             marginBottom: 5,
             justifyContent: "left",
           }}
@@ -135,7 +118,6 @@ export default function About() {
             width: "100%",
             justifyContent: "space-between",
             alignItems: "top",
-            margin: 3,
             marginBottom: 10,
           }}
         >
@@ -167,7 +149,7 @@ export default function About() {
               width: "auto",
               maxWidth: "100%",
               objectFit: "contain",
-              marginLeft: "3vw",
+              marginLeft: 3,
               position: "relative",
               alignSelf: "center",
               alignContent: "center",
@@ -176,7 +158,7 @@ export default function About() {
             }}
           />
         </Box>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 }

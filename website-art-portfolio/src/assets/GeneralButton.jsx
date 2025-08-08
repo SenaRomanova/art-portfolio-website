@@ -14,7 +14,6 @@ export default function GeneralButton({buttonName, to, fontSize, paddingLeft}) {
       color: '#858585ff',
       alignItems: 'center', 
       justifyContent: 'center', 
-      width: 'inherit', 
       paddingLeft: {paddingLeft} || 0, 
       textTransform: 'none', 
       '&:hover': 

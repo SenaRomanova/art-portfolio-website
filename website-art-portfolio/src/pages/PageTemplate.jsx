@@ -13,6 +13,7 @@ import Grid from "@mui/material/Grid";
 export default function Template({
   thumbnails,
   thumbnailNames,
+  prices,
   thumbnailDescriptions,
   detailedCatalogueList,
   descriptionList,
@@ -21,42 +22,7 @@ export default function Template({
   const [open, setOpen] = useState(false);
   const [id, setID] = useState(-1);
 
-  const gridElement = (image, name, description, id) => (
-    // <Card>
-    //     <CardContent sx={{height: '100%', display: 'flex', flexDirection: 'column'}}>
-    //         <Stack sx={{width: '100%', height: '100%', display: 'flex', cursor: "pointer"}}
-    //             onClick={() => {
-    //                 setID(id);
-    //                 setOpen(true);
-    //             }}>
-    //                 <Box sx={{display: 'flex', width: '100%', justifyContent: 'center'}}>
-    //                     <Box
-    //                     component="img"
-    //                     src={image}
-    //                     alt="Image"
-    //                     sx={{
-    //                         width: '90%',
-    //                         borderRadius: 1,
-    //                         height: 'auto',
-    //                         alignContent: 'center',
-    //                         justifyContent: 'center',
-    //                     }}/>
-    //                 </Box>
-
-    //             <Stack sx={{display: 'flex', width: '100%', height: '100%', justifyContent: 'flex-end'}}>
-    //                 <Typography variant="h5" sx={{ textAlign: 'right', color: 'grey'}}>
-    //                     {name}
-    //                 </Typography>
-    //                 <Typography variant="h6" sx={{ textAlign: 'right', color: 'grey'}}>
-    //                     {description}
-    //                 </Typography>
-    //             </Stack>
-
-    //         </Stack>
-
-    //         <Divider variant="middle" sx={{width: '100%', justifySelf: 'center'}}/>
-    //     </CardContent>
-    // </Card>
+  const gridElement = (image, name, description, price, id) => (
 
     <Card
       onClick={() => {
@@ -71,12 +37,16 @@ export default function Template({
         justifyContent: "center",
         display: "flex",
         flexDirection: "column",
+        "&:hover img": {
+            transform: "scale(1.04)", //zoom amt
+          },
       }}
     >
       <CardMedia
         component="img"
         src={image}
         alt="Image"
+        
         sx={{
           margin: 1,
           width: "auto",
@@ -85,6 +55,9 @@ export default function Template({
           overflow: "hidden",
           alignContent: "center",
           justifySelf: "center",
+          transition: "transform 0.3s ease",//zoom time
+          transformOrigin: "center center",
+          
         }}
       />
 
@@ -96,6 +69,12 @@ export default function Template({
           sx={{ width: "100%", textAlign: "right", color: "grey" }}
         >
           {name}
+        </Typography>
+        <Typography
+          variant="h6"
+          sx={{ width: "100%", textAlign: "right", color: "grey" }}
+        >
+          {price}
         </Typography>
         <Typography
           variant="subtitle1"
@@ -140,6 +119,7 @@ export default function Template({
                   image,
                   thumbnailNames[index],
                   thumbnailDescriptions[index],
+                  prices[index],
                   index
                 )}
               </Grid>
@@ -166,6 +146,7 @@ export default function Template({
             imageList={detailedCatalogueList[id]}
             description={descriptionList[id]}
             materials={materialsList[id]}
+            price={prices[id]}
             onClose={() => setOpen(false)}
           />
         </ClickAwayListener>

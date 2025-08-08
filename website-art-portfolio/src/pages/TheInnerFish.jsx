@@ -12,6 +12,7 @@ import MethuselahTheFish from "../assets/ImageCatalogue/TheInnerFish/MethuselahT
 import MethuselahTheFishDetail from "../assets/ImageCatalogue/TheInnerFish/MethuselahTheFishDetail.JPG";
 import RenaissanceFish from "../assets/ImageCatalogue/TheInnerFish/RenaissanceFish.jpg";
 import RenaissanceFishDetail from "../assets/ImageCatalogue/TheInnerFish/RenaissanceFishDetail.jpg";
+import PageHeader from "../assets/PageHeading";
 
 export default function TheInnerFish() {
   const thumbnails = [
@@ -38,6 +39,9 @@ export default function TheInnerFish() {
     "Methuselah The Fish Description",
     "Renaissance Fish Description",
   ];
+  
+  
+  const priceList = ['$5,200.00', '$5,200.00', '$10,000.00', '$5,200.00', '$10,000.00']
 
   const archiveFishCatalogue = [ArchiveFish, ArchiveFishDetail];
   const islandicSweaterCatalogue = [
@@ -83,20 +87,8 @@ export default function TheInnerFish() {
 
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          margin: 3,
-        }}
-      >
-        <Typography
-          variant="h3"
-          sx={{ display: "flex", justifyContent: "left", color: "black" }}
-        >
-          {" "}
-          The Inner Fish{" "}
-        </Typography>
-      </Box>
+      
+      <PageHeader name = "The Inner Fish"/> 
 
       <Divider variant="middle" sx={{ width: "90%", margin: 4 }} />
 
@@ -104,6 +96,7 @@ export default function TheInnerFish() {
         thumbnails={thumbnails}
         thumbnailNames={thumbnailNames}
         thumbnailDescriptions={thumbnailDescriptions}
+        prices={priceList}
         detailedCatalogueList={catalogues}
         descriptionList={descriptions}
         materialsList={materials}

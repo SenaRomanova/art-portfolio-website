@@ -33,7 +33,7 @@ export default function DropdownMenuButton({ buttonName, content, fontSize, padd
         color: '#858585ff',
         alignItems: 'center', 
         justifyContent: 'center', 
-        width: '10%', 
+        width: '100%', 
         paddingLeft: {paddingLeft} || 0, 
         textTransform: 'none', 
         '&:hover': 

@@ -7,6 +7,8 @@ import ArrowDropDownCircleOutlinedIcon from "@mui/icons-material/ArrowDropDownCi
 import { useState, useRef, useEffect } from "react";
 
 export default function OverlayWindow({
+  
+  price,
   imageList,
   description,
   materials,
@@ -71,6 +73,13 @@ export default function OverlayWindow({
           width: "90%",
         }}
       >
+        <Typography
+          variant="h5"
+          sx={{ textAlign: "Left", width: "inherit", paddingBottom: 2 }}
+        >
+          {price}
+        </Typography>
+
         <Typography
           variant="h5"
           sx={{ textAlign: "Left", width: "inherit", paddingBottom: 2 }}

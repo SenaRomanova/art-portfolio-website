@@ -60,32 +60,31 @@ export default function DesktopMenu() {
         }}
       >
         <Box sx={{ width: "10%" }}>
-          {" "}
-          <GeneralButton buttonName={"home"} to={"/"} fontSize={"1em"} />{" "}
+          <GeneralButton buttonName={"home"} to={"/"} fontSize={"1em"} />
         </Box>
         <Box sx={{ width: "10%" }}>
-          {" "}
           <DropdownMenuButton
             buttonName={"series"}
             fontSize={"1em"}
             content={DropdownContent}
-          />{" "}
+          />
         </Box>
         <Box sx={{ width: "10%" }}>
-          {" "}
+          
           <GeneralButton
             buttonName={"about"}
             to={"/about"}
             fontSize={"1em"}
-          />{" "}
+          />
         </Box>
         <Box sx={{ width: "10%" }}>
           <GeneralButton
             buttonName={"contacts"}
             to={"/contacts"}
             fontSize={"1em"}
-          />{" "}
+          />
         </Box>
+        
       </Box>
     </>
   );

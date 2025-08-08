@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Template from "./PageTemplate";
 import Divider from "@mui/material/Divider";
 import Penates from './../assets/ImageCatalogue/Penates/ThePenates.jpg';
+import PageHeader from "../assets/PageHeading";
 
 export default function ThePenates() {
   //add all the thumbnails: 
@@ -13,6 +14,7 @@ export default function ThePenates() {
     const thumbnailNames = ['The Penates'];
 
     const thumbnailDescriptions = ['The Penates Description'];
+    const priceList=['$10,000.00']
 
     //create pop-up page content for each artwork:
     const thePenatesCatalogue = [Penates];
@@ -31,9 +33,7 @@ export default function ThePenates() {
 
     return(
         <>
-            <Box sx={{display: 'flex',margin: 3,}}>
-                <Typography variant="h3" sx={{display: 'flex', justifyContent: 'left', color: 'black'}}> The Penates </Typography>
-            </Box>
+            <PageHeader name={"The Penates"}/>
 
 
             <Divider variant="middle" sx={{width: '90%', margin: 4}}/>
@@ -42,6 +42,7 @@ export default function ThePenates() {
                 thumbnails={thumbnails} 
                 thumbnailNames={thumbnailNames}
                 thumbnailDescriptions = {thumbnailDescriptions} 
+                prices={priceList}
                 detailedCatalogueList={catalogues}
                 descriptionList={descriptions}
                 materialsList={materials}

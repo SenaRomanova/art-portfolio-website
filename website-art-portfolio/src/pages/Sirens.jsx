@@ -24,6 +24,7 @@ import ThePolarMermaidDetail from './../assets/ImageCatalogue/TheMoonAndSirens/T
 import ThePolarMermaidDetail11 from './../assets/ImageCatalogue/TheMoonAndSirens/ThePolarMermaidDetail1-1.jpg';
 import ThePolarMermaidDetail12 from './../assets/ImageCatalogue/TheMoonAndSirens/ThePolarMermaidDetail1-2.jpg';
 import TheShyMandrake from './../assets/ImageCatalogue/TheMoonAndSirens/TheShyMandrake.jpg';
+import PageHeader from "../assets/PageHeading";
 
 export default function Sirens() {
 //add all the thumbnails: 
@@ -34,6 +35,7 @@ export default function Sirens() {
 
     const thumbnailDescriptions = ['The Book of Eclipses', 'The Book of Eclipses', 'The Cup Of Selena', 'The Fishermans Wife', 'The Frog Princess', 'The Owl Queen', 'The Polar Mermaid', 'The Polar Mermaid1', 'The Shy Mandrake'];
 
+    const priceList = ['$5,200.00', '$5,200.00', '$10,000.00', '$5,200.00', '$10,000.00', '$5,200.00', '$5,200.00', '$10,000.00', '$5,200.00']
     //create pop-up page content for each artwork:
     const eclipses1Catalogue = [TheBookOfEclipses, TheBookOfEclipsesDetails];
     const eclipses2Catalogue = [TheBookOfEclipses1, TheBookOfEclipsesDetail11, TheBookOfEclipsesDetail12];
@@ -78,9 +80,7 @@ export default function Sirens() {
 
     return(
         <>
-            <Box sx={{display: 'flex', margin: 3}}>
-                <Typography variant="h3" sx={{display: 'flex', justifyContent: 'left', color: 'black'}}> The Moon and Sirens </Typography>
-            </Box>
+            <PageHeader name={"The Moon and Sirens "}/>
 
 
             <Divider variant="middle" sx={{width: '90%', margin: 4}}/>
@@ -89,6 +89,7 @@ export default function Sirens() {
                 thumbnails={thumbnails} 
                 thumbnailNames={thumbnailNames}
                 thumbnailDescriptions = {thumbnailDescriptions} 
+                prices={priceList}
                 detailedCatalogueList={catalogues}
                 descriptionList={descriptions}
                 materialsList={materials}

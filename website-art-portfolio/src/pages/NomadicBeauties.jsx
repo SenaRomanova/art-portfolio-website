@@ -12,6 +12,7 @@ import Divider from '@mui/material/Divider';
 
 
 import Template from "./PageTemplate";
+import PageHeader from "../assets/PageHeading";
 
 export default function NomadicBeauties() {
 
@@ -20,6 +21,8 @@ export default function NomadicBeauties() {
 
     //add the thumbnail descriptions:
     const thumbnailNames = ['Altai Sun', 'Archer Girl', 'Shaman Girl', 'Star Gatherer'];
+    
+    const priceList = ['$5,200.00', '$5,200.00', '$10,000.00', '$10,000.00']
 
     const thumbnailDescriptions = ['Altai Sun Description', 'Archer Girl Description', 'Shaman Girl Description', 'Star Gatherer Description'];
 
@@ -49,10 +52,7 @@ export default function NomadicBeauties() {
 
     return(
         <>
-            <Box sx={{display: 'flex', margin: 3}}>
-                <Typography variant="h3" sx={{display: 'flex', justifyContent: 'left', color: 'black'}}> Nomadic Beauties </Typography>
-            </Box>
-
+            <PageHeader name={"Nomadic Beauties"}/>
 
             <Divider variant="middle" sx={{width: '90%', margin: 4}}/>
 
@@ -60,6 +60,7 @@ export default function NomadicBeauties() {
                 thumbnails={thumbnails} 
                 thumbnailNames={thumbnailNames}
                 thumbnailDescriptions = {thumbnailDescriptions} 
+                prices={priceList}
                 detailedCatalogueList={catalogues}
                 descriptionList={descriptions}
                 materialsList={materials}
