@@ -5,8 +5,10 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useRef } from 'react';
 import GeneralButton from './GeneralButton';
+import { useTheme } from '@emotion/react';
 
-export default function DropdownMenuButton({ buttonName, content, fontSize, paddingLeft }) {
+export default function DropdownMenuButton({ buttonName, content,paddingLeft }) {
+  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
   const closeTimeoutRef = useRef(null);
@@ -28,8 +30,9 @@ export default function DropdownMenuButton({ buttonName, content, fontSize, padd
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         variant='text' color='white' sx= {
-        {display: 'flex', 
-        fontSize: {fontSize} || '1em', 
+        {
+        ...theme.typography.body1,
+        display: 'flex',  
         color: '#858585ff',
         alignItems: 'center', 
         justifyContent: 'center', 

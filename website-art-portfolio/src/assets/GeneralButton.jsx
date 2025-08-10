@@ -1,7 +1,9 @@
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+import { useTheme } from '@emotion/react';
 
-export default function GeneralButton({buttonName, to, fontSize, paddingLeft}) {
+export default function GeneralButton({buttonName, to,}) {
+  const theme = useTheme();
   return (
   <Button 
     disableRipple 
@@ -10,12 +12,12 @@ export default function GeneralButton({buttonName, to, fontSize, paddingLeft}) {
     component={to ? Link : 'button'} //if to prop is provided, component is Link, otherwise use button
     to={to} //if to prop is provided, set the to attribute
     sx= {
-      {display: 'flex',
-      fontSize: {fontSize}, 
+      {
+      ...theme.typography.body1,
+      display: 'flex',
       color: '#858585ff',
       alignItems: 'center', 
       justifyContent: 'center', 
-      paddingLeft: {paddingLeft} || 0, 
       textTransform: 'none', 
       '&:hover': 
       {color: '#cb0000ff'}}

@@ -17,14 +17,15 @@ import FishCover from './assets/FishCover.jpg';
 import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
 import RefundPolicy from "./pages/RefundPolicy.jsx";
 import TermsOfService from "./pages/ToS.jsx";
+import ContactForm from "./contacts/contact.jsx";
+import { useMediaQuery } from "@mui/material";
+
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./assets/AppTheme";
 
 function App() {
-  const [vw, setVw] = useState(window.innerWidth); //vw is the variable, setVw is the function to set the value of vw
-  useEffect(() => {
-    const handleResize = () => setVw(window.innerWidth); //set the value of vw to the current window width
-    window.addEventListener("resize", handleResize); //listens to the resize event and calls handleResize when the window is resized
-    return () => window.removeEventListener("resize", handleResize); //cleanup function to remove the event listener when the component is unmounted
-  }, []);
+  
+  const isDesktop = useMediaQuery("(min-width:900px)");
 
   const location = useLocation();
   
@@ -61,7 +62,7 @@ function App() {
 
   const fish = (
     <>
-      {vw > 800 ? (
+      {isDesktop ? (
           <Box
             sx={{
               display: "flex",
@@ -100,13 +101,18 @@ function App() {
 
   return (
     <>
-      {vw > 800 ? <DesktopMenu /> : <PhoneMenu />}
-      
-      {isHome && fish}
+    
+      <ThemeProvider theme={theme}>
+        {isDesktop ? <DesktopMenu /> : null}
+        
+        {isHome && fish}
 
-      <Box sx={{ display: "flex", justifyContent: 'center' }}>{content}</Box>
-      <Box sx={{display: 'flex', bgcolor: 'white', width: '100%', height: '25vh'}}/>
-      <Box sx={{ display: "flex" }}><Footer/></Box>
+        <Box sx={{ display: "flex", justifyContent: 'center' }}>{content}</Box>
+        <Box sx={{display: 'flex', bgcolor: 'white', width: '100%', height: '25vh'}}/>
+        
+        <Box sx={{ display: "flex", width: '100%', justifyContent: 'center', padding: 3 }}><ContactForm/></Box>
+        <Box sx={{ display: "flex" }}><Footer/></Box>
+      </ThemeProvider>
     </>
   );
 }

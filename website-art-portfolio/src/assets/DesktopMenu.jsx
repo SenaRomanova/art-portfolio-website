@@ -18,32 +18,26 @@ export default function DesktopMenu() {
       <GeneralButton
         buttonName={"Nomadic Beauties"}
         to={"/nomadicbeauties"}
-        fontSize={"1em"}
       />
       <GeneralButton
         buttonName={"The Inner Fish"}
         to={"/theinnerfish"}
-        fontSize={"1em"}
       />
       <GeneralButton
         buttonName={"Totems & Talismans"}
         to={"/totemsandtalismans"}
-        fontSize={"1em"}
       />
       <GeneralButton
         buttonName={"The Moon and Sirens"}
         to={"/sirens"}
-        fontSize={"1em"}
       />
       <GeneralButton
         buttonName={"The Penates (The Antique)"}
         to={"/thepenates"}
-        fontSize={"1em"}
       />
       <GeneralButton
         buttonName={"Another Lions"}
         to={"/anotherlions"}
-        fontSize={"1em"}
       />
     </Box>
   );
@@ -60,12 +54,11 @@ export default function DesktopMenu() {
         }}
       >
         <Box sx={{ width: "10%" }}>
-          <GeneralButton buttonName={"home"} to={"/"} fontSize={"1em"} />
+          <GeneralButton buttonName={"home"} to={"/"}  />
         </Box>
         <Box sx={{ width: "10%" }}>
           <DropdownMenuButton
             buttonName={"series"}
-            fontSize={"1em"}
             content={DropdownContent}
           />
         </Box>
@@ -74,14 +67,12 @@ export default function DesktopMenu() {
           <GeneralButton
             buttonName={"about"}
             to={"/about"}
-            fontSize={"1em"}
           />
         </Box>
         <Box sx={{ width: "10%" }}>
           <GeneralButton
             buttonName={"contacts"}
             to={"/contacts"}
-            fontSize={"1em"}
           />
         </Box>
         

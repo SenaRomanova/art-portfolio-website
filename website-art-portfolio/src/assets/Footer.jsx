@@ -18,7 +18,7 @@ export default function Footer() {
       }}
     >
       <Box sx={{ width: '50%', justifyItems: 'left' }}>
-        <Typography variant="body2" color="text.secondary" sx={{padding: 1}}>
+        <Typography variant="body1" color="text.secondary" sx={{padding: 1}}>
           © {new Date().getFullYear()} Inna Romanova. All rights reserved.
         </Typography>
 
@@ -32,7 +32,7 @@ export default function Footer() {
 
 
       <Box sx={{ width: '50%', justifyItems: 'right' }}>
-        <Typography variant="body2" color="text.secondary" textAlign={'right'}> Follow Inna Romanova on Socials: </Typography>
+        <Typography variant="body1" color='grey' textAlign={'right'}> Follow Inna Romanova on Socials: </Typography>
         <Socials />
       </Box>
     </Box>
