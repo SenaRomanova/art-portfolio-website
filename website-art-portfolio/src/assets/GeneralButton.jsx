@@ -2,10 +2,17 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@emotion/react';
 
-export default function GeneralButton({buttonName, to,}) {
+export default function GeneralButton({buttonName, to, onSelect}) {
   const theme = useTheme();
+
+  const handleClick = () => {
+    if (onSelect) { onSelect()} ;
+  };
+
+
   return (
   <Button 
+    onClick={handleClick}
     disableRipple 
     variant='text' 
     color='white'

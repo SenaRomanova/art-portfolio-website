@@ -8,13 +8,19 @@ import "../assets/IRLogo.PNG";
 import Container from "@mui/material/Container";
 import ArtistLogo from "./Logo";
 import Socials from "./Socials";
+import { useState, useEffect } from "react";
 
 export const drawerWidth = "100%";
 export const drawerHeight = 600;
 
 export default function DesktopMenu() {
+
+  const [dropdown, setDropdown] = useState(true);
+
+
+
   const DropdownContent = (
-    <Box>
+    <Box onClick = {() => setDropdown(false)} >
       <GeneralButton
         buttonName={"Nomadic Beauties"}
         to={"/nomadicbeauties"}
@@ -60,8 +66,9 @@ export default function DesktopMenu() {
         </Box>
         <Box >
           <DropdownMenuButton
+            onSelect={() => setDropdown(true)}
             buttonName={"series"}
-            content={DropdownContent}
+            content={dropdown && DropdownContent}
           />
         </Box>
         <Box >

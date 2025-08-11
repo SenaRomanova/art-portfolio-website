@@ -3,13 +3,14 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import { useRef } from 'react';
+import { useRef,  useEffect, useState } from 'react';
 import { useTheme } from '@emotion/react';
 import { baseTheme } from './AppTheme';
 
-export default function DropdownMenuButton({ buttonName, content,paddingLeft }) {
+export default function DropdownMenuButton({ buttonName, content, paddingLeft, onSelect}) {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+
 
   const closeTimeoutRef = useRef(null);
   const handleMouseEnter = () => {
@@ -23,9 +24,15 @@ export default function DropdownMenuButton({ buttonName, content,paddingLeft }) 
     }, 300);
   };
 
+  const handleClick = () => {
+    if (onSelect) { onSelect()} ;
+  };
+
+
   return (
     <>
       <Button
+      onClick={handleClick}
         disableRipple
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

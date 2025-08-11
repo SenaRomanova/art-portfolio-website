@@ -45,7 +45,7 @@ export default function DropdownMenuButtonPhone({ buttonName, content,paddingLef
           </Button>
 
         {open && <Box 
-          sx={{bgcolor: 'white', borderRadius: 2, justifyContent: 'left'}}> {content} </Box>}
+          sx={{bgcolor: 'white', borderRadius: 2, justifyContent: 'left', zIndex: 100}} onClick={() => setOpen(false)}> {content} </Box>}
       </Stack>
       
     </>
