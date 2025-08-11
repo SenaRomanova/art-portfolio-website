@@ -1,72 +1,101 @@
-import React from 'react';
-import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import { useRef,  useEffect, useState } from 'react';
-import { useTheme } from '@emotion/react';
-import { baseTheme } from './AppTheme';
+import React from "react";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { useRef, useEffect, useState } from "react";
+import { useTheme } from "@emotion/react";
+import { baseTheme } from "./AppTheme";
 
-export default function DropdownMenuButton({ buttonName, content, paddingLeft, onSelect}) {
+export default function DropdownMenuButton({
+  buttonName,
+  content,
+  paddingLeft,
+  onSelect,
+}) {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
 
-
   const closeTimeoutRef = useRef(null);
+
   const handleMouseEnter = () => {
     clearTimeout(closeTimeoutRef.current);
     setOpen(true);
   };
 
   const handleMouseLeave = () => {
-  closeTimeoutRef.current = setTimeout(() => {
-    setOpen(false);
+    closeTimeoutRef.current = setTimeout(() => {
+      setOpen(false);
     }, 300);
   };
 
   const handleClick = () => {
-    if (onSelect) { onSelect()} ;
+    if (onSelect) {
+      setOpen(false);
+      onSelect();
+    }
   };
-
 
   return (
     <>
       <Button
-      onClick={handleClick}
+        onClick={handleClick}
         disableRipple
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        variant='text' color='white' sx= {
-        {
-        ...theme.typography.button,
-        display: 'flex',  
-        color: '#858585ff',
-        alignItems: 'center', 
-        justifyContent: 'center', 
-        width: '100%', 
-        paddingLeft: {paddingLeft} || 0, 
-        textTransform: 'none', 
-        '&:hover': 
-        {color: '#cb0000ff'}}
-      }>
-        
+        variant="text"
+        color="white"
+        sx={{
+          ...theme.typography.body1,
+          display: "flex",
+          color: "#858585ff",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+          paddingLeft: { paddingLeft } || 0,
+          textTransform: "none",
+          "&:hover": { color: "#cb0000ff" },
+        }}
+      >
         {buttonName} {/* move this lower to have the icon be on the left */}
-        {!open && <KeyboardArrowRightIcon sx={{ml: 1, 
+        {!open && (
+          <KeyboardArrowRightIcon
+            sx={{
+              ml: 1,
               [baseTheme.breakpoints.up("xs")]: { fontSize: "2.2rem" },
               [baseTheme.breakpoints.up("md")]: { fontSize: "1.8rem" },
-              [baseTheme.breakpoints.up("lg")]: { fontSize: "1.4rem" },}}/>}
-        {open && (<KeyboardArrowDownIcon fontSize='small' sx={{ml: 1, 
+              [baseTheme.breakpoints.up("lg")]: { fontSize: "1.4rem" },
+            }}
+          />
+        )}
+        {open && (
+          <KeyboardArrowDownIcon
+            fontSize="small"
+            sx={{
+              ml: 1,
               [baseTheme.breakpoints.up("xs")]: { fontSize: "2.2rem" },
               [baseTheme.breakpoints.up("md")]: { fontSize: "1.8rem" },
-              [baseTheme.breakpoints.up("lg")]: { fontSize: "1.4rem" },}}/>)} 
-
-
+              [baseTheme.breakpoints.up("lg")]: { fontSize: "1.4rem" },
+            }}
+          />
+        )}
       </Button>
 
-       {open && <Box 
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        sx={{bgcolor: 'white', position: 'absolute', zIndex: 500, borderRadius: 2}}> {content} </Box>}
+      {open && (
+        <Box
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          sx={{
+            bgcolor: "white",
+            position: "absolute",
+            zIndex: 500,
+            borderRadius: 2,
+          }}
+        >
+          {" "}
+          {content}{" "}
+        </Box>
+      )}
     </>
   );
 }

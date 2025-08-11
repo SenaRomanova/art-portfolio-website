@@ -14,37 +14,22 @@ export const drawerWidth = "100%";
 export const drawerHeight = 600;
 
 export default function DesktopMenu() {
-
   const [dropdown, setDropdown] = useState(true);
 
-
-
   const DropdownContent = (
-    <Box onClick = {() => setDropdown(false)} >
-      <GeneralButton
-        buttonName={"Nomadic Beauties"}
-        to={"/nomadicbeauties"}
-      />
-      <GeneralButton
-        buttonName={"The Inner Fish"}
-        to={"/theinnerfish"}
-      />
+    <Box onClick={() => setDropdown(false)}>
+      <GeneralButton buttonName={"Nomadic Beauties"} to={"/nomadicbeauties"} />
+      <GeneralButton buttonName={"The Inner Fish"} to={"/theinnerfish"} />
       <GeneralButton
         buttonName={"Totems & Talismans"}
         to={"/totemsandtalismans"}
       />
-      <GeneralButton
-        buttonName={"The Moon and Sirens"}
-        to={"/sirens"}
-      />
+      <GeneralButton buttonName={"The Moon and Sirens"} to={"/sirens"} />
       <GeneralButton
         buttonName={"The Penates (The Antique)"}
         to={"/thepenates"}
       />
-      <GeneralButton
-        buttonName={"Another Lions"}
-        to={"/anotherlions"}
-      />
+      <GeneralButton buttonName={"Another Lions"} to={"/anotherlions"} />
     </Box>
   );
 
@@ -53,38 +38,30 @@ export default function DesktopMenu() {
       <Box
         sx={{
           display: "flex",
-          width: '60%',
+          width: "60%",
           alignItems: "center",
-          justifySelf: 'center',
+          justifySelf: "center",
           justifyContent: "space-evenly",
-          
+
           maxWidth: 1000,
         }}
       >
-        <Box >
-          <GeneralButton buttonName={"home"} to={"/"}  />
+        <Box>
+          <GeneralButton buttonName={"home"} to={"/"} />
         </Box>
-        <Box >
+        <Box>
           <DropdownMenuButton
             onSelect={() => setDropdown(true)}
             buttonName={"series"}
             content={dropdown && DropdownContent}
           />
         </Box>
-        <Box >
-          
-          <GeneralButton
-            buttonName={"about"}
-            to={"/about"}
-          />
+        <Box>
+          <GeneralButton buttonName={"about"} to={"/about"} />
         </Box>
         <Box>
-          <GeneralButton
-            buttonName={"contacts"}
-            to={"/contacts"}
-          />
+          <GeneralButton buttonName={"contacts"} to={"/contacts"} />
         </Box>
-        
       </Box>
     </>
   );
@@ -94,25 +71,40 @@ export default function DesktopMenu() {
       <Box
         sx={{
           display: "flex",
+          flexDirection: "row",
           width: drawerWidth,
           height: "15vh",
-          justifyContent: 'space-between',
+          justifyContent: "space-between",
           alignItems: "center",
-          justifySelf: 'center',
+          marginTop: 1,
           maxWidth: 1400,
         }}
       >
-        <Box sx={{ width: '30%', paddingLeft: 3 }}>
+        <Box sx={{ width: "30%", paddingLeft: 3 }}>
           <ArtistLogo />
         </Box>
 
-        <Box sx={{ width: '70%', padding: 3, justifyItems: 'right'}}>
-            <Socials/>
+        <Box
+          sx={{
+            display: "flex",
+            width: "70%",
+            padding: 3,
+            justifyContent: "flex-end",
+          }}
+        >
+          <Socials />
         </Box>
-        
       </Box>
 
-      <Box sx={{ width: drawerWidth, bgcolor: "#ffffff" }}>{DrawerContent}</Box>
+      <Box
+        sx={{
+          display: "flex",
+          width: drawerWidth,
+          justifyContent: "center",
+        }}
+      >
+        {DrawerContent}
+      </Box>
     </>
   );
 }

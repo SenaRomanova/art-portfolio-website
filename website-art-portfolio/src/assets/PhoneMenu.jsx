@@ -11,6 +11,7 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import ArtistLogo from "./Logo";
+import { baseTheme } from "./AppTheme";
 
 export const drawerWidth = "90vw";
 export const drawerHeight = 600;
@@ -126,24 +127,54 @@ export default function PhoneMenu() {
         variant="temporary"
         open={phoneMenuOpen}
         onClose={() => setMenuOpen(false)}
-        sx={{ "& .MuiDrawer-paper": { backgroundColor: "#ffffffff" } }}
+        sx={{
+          "& .MuiDrawer-paper": { backgroundColor: "#ffffffff" },
+        }}
       >
-        <IconButton
-          aria-label="menu"
-          onClick={() => {
-            setMenuOpen(false);
-          }}
+        <Box
           sx={{
-            height: 120,
-            width: 120,
-            alignSelf: "flex-end",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+            width: "100%",
           }}
         >
-          <CloseIcon sx={{ fontSize: 65 }} />
-        </IconButton>
-        <Box sx={{ width: "100%", alignItems: "left" }}>
-          <ArtistLogo />
+          <Box sx={{ width: "100%", marginTop: 3 }}>
+            <ArtistLogo />
+          </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              width: "100%",
+              justifyContent: "right",
+              alignSelf: "flex-start",
+            }}
+          >
+            <IconButton
+              aria-label="menu"
+              onClick={() => {
+                setMenuOpen(false);
+              }}
+              sx={{
+                [baseTheme.breakpoints.up("xs")]: { width: 80 },
+                [baseTheme.breakpoints.up("sm")]: { width: 100 },
+                [baseTheme.breakpoints.up("xs")]: { height: 80 },
+                [baseTheme.breakpoints.up("sm")]: { height: 100 },
+                alignSelf: "flex-end",
+              }}
+            >
+              <CloseIcon
+                sx={{
+                  [baseTheme.breakpoints.up("xs")]: { fontSize: 50 },
+                  [baseTheme.breakpoints.up("sm")]: { fontSize: 60 },
+                }}
+              />
+            </IconButton>
+          </Box>
         </Box>
+
         {DrawerContent}
       </Drawer>
     </div>
