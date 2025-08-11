@@ -1,11 +1,15 @@
 
 import { Box, Stack, Container, Typography, TextField, useMediaQuery } from "@mui/material";
+import PageHeader from "../assets/PageHeading";
 
 export default function ContactForm() {
     const isDesktop = useMediaQuery("(min-width:1000px)");
     return (
 
-        <Container maxWidth="sm">
+        <Container maxWidth="sm" sx={{display: 'flex', flexDirection:'column'}}>
+            <Box sx={{width: '100%', justifyItems: 'center'}}>
+                <PageHeader name={'Contact Us!'}/>
+            </Box>
             <Stack component="form" spacing={3}>
                 <TextField id='outlined-basic' label='Name' variant='outlined' placeholder="Enter Name" />
                 <TextField id='outlined-basic' label='Email' variant='outlined' placeholder="Enter email address" />

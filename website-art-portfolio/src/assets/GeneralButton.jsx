@@ -2,7 +2,7 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@emotion/react';
 
-export default function GeneralButton({buttonName, to, onSelect}) {
+export default function GeneralButton({buttonName, to, onSelect, footer}) {
   const theme = useTheme();
 
   const handleClick = () => {
