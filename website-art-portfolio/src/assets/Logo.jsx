@@ -7,7 +7,6 @@ export default function ArtistLogo() {
       sx={{
         display: "flex",
         alignItems: "center",
-        width: 300,
         p: 2.5,
       }}
     >

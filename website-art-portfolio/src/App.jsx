@@ -19,7 +19,6 @@ import RefundPolicy from "./pages/RefundPolicy.jsx";
 import TermsOfService from "./pages/ToS.jsx";
 import ContactForm from "./contacts/contact.jsx";
 import { useMediaQuery } from "@mui/material";
-
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./assets/AppTheme";
 
@@ -33,7 +32,8 @@ function App() {
 
   useEffect(() => {
   setIsHome(location.pathname === "/");
-}, [location.pathname]);
+  }, [location.pathname]);
+
 
   const content = (
     <Box
@@ -103,7 +103,8 @@ function App() {
     <>
     
       <ThemeProvider theme={theme}>
-        {isDesktop ? <DesktopMenu /> : null}
+        {isDesktop ? <DesktopMenu />  : <PhoneMenu/>}
+        
         
         {isHome && fish}
 

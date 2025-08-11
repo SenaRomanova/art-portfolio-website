@@ -25,10 +25,15 @@ const theme = createTheme({
       [baseTheme.breakpoints.up("lg")]: { fontSize: "1.25rem" },
     },
     body1: {
-      [baseTheme.breakpoints.up("xs")]: { fontSize: "1.15rem" },
+      [baseTheme.breakpoints.up("xs")]: { fontSize: "1.2rem" },
       [baseTheme.breakpoints.up("md")]: { fontSize: "1.25rem" },
-      [baseTheme.breakpoints.up("lg")]: { fontSize: "1.35rem" },
+      [baseTheme.breakpoints.up("lg")]: { fontSize: "1.3rem" },
     },
+    button: {
+      [baseTheme.breakpoints.up("xs")]: { fontSize: "2.2rem" },
+      [baseTheme.breakpoints.up("md")]: { fontSize: "1.8rem" },
+      [baseTheme.breakpoints.up("lg")]: { fontSize: "1.4rem" },
+    }
   },
 
   components: {

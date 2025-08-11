@@ -2,18 +2,23 @@ import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import GeneralButton from "./GeneralButton";
-import DropdownMenuButton from "./DropdownMenuButton";
-import Typography from "@mui/material/Typography";
-import "../assets/IRLogo.PNG";
-import Container from "@mui/material/Container";
-import IRLogo from "../assets/IRLogo.PNG";
+
 import { Drawer, Stack } from "@mui/material";
 import DropdownMenuButtonPhone from "./DropdownMenuButtonPhone";
 
-export const drawerWidth = 300;
+import MenuIcon from '@mui/icons-material/Menu';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import { useState } from "react";
+import ArtistLogo from "./Logo";
+
+
+export const drawerWidth = 500;
 export const drawerHeight = 600;
 
 export default function PhoneMenu() {
+  
+  const [phoneMenuOpen, setMenuOpen] = useState(false);
   const DropdownContent = (
     <Stack sx={{display: 'flex', alignItems: 'flex-start', padding: 2}}>
       <GeneralButton
@@ -48,8 +53,8 @@ export default function PhoneMenu() {
   const DrawerContent = (
     <>
 
-      <Box sx={{ width: drawerWidth, height: "10vh" }} />
-
+      <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'start', width: drawerWidth, height: "10vh" }} />
+        
       <Box
         sx={{
           display: "flex",
@@ -58,6 +63,9 @@ export default function PhoneMenu() {
         }}
       >
         <List sx={{ width: "100%" }} component="nav">
+          <ListItem>
+            <GeneralButton buttonName={"home"} to={"/"}  />
+          </ListItem>
           <ListItem>
             <GeneralButton
               buttonName={"about"}
@@ -83,11 +91,37 @@ export default function PhoneMenu() {
 
   return (
     <div>
+      <IconButton aria-label="menu"
+          onClick={() => {setMenuOpen(true)}}
+            sx={{
+              height: 100,
+              width: 100
+            }}
+          >
+            <MenuIcon sx={{ fontSize: 65 }}/>
+      </IconButton>
+
       <Drawer
         anchor="left"
-        variant="permanent"
+        variant="temporary"
+        open={phoneMenuOpen}
+        onClose={() => setMenuOpen(false)}
         sx={{ "& .MuiDrawer-paper": { backgroundColor: "#ffffffff" } }}
       >
+        <IconButton aria-label="menu"
+            onClick={() => {setMenuOpen(false)}}
+              sx={{
+                height: 120,
+                width: 120,
+                alignSelf: 'flex-end',
+              }}
+            >
+              <CloseIcon sx={{ fontSize: 65 }}/>
+        </IconButton>
+        <Box sx={{width: '100%', alignItems: 'left'}}>
+          
+          <ArtistLogo/>
+        </Box>
         {DrawerContent}
       </Drawer>
     </div>

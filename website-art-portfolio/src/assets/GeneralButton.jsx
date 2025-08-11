@@ -13,7 +13,7 @@ export default function GeneralButton({buttonName, to,}) {
     to={to} //if to prop is provided, set the to attribute
     sx= {
       {
-      ...theme.typography.body1,
+      ...theme.typography.button,
       display: 'flex',
       color: '#858585ff',
       alignItems: 'center', 

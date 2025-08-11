@@ -5,6 +5,7 @@ import Stack from "@mui/material/Stack";
 import CloseIcon from "@mui/icons-material/Close";
 import ArrowDropDownCircleOutlinedIcon from "@mui/icons-material/ArrowDropDownCircleOutlined";
 import { useState, useRef, useEffect } from "react";
+import { baseTheme } from "./AppTheme";
 
 export default function OverlayWindow({
   
@@ -74,7 +75,7 @@ export default function OverlayWindow({
         }}
       >
         <Typography
-          variant="h5"
+          variant="h4"
           sx={{ textAlign: "Left", width: "inherit", paddingBottom: 2 }}
         >
           {price}
@@ -111,19 +112,7 @@ export default function OverlayWindow({
 
   return (
     <>
-      <Box
-        sx={{
-          display: "flex",
-          width: "100%",
-          justifyContent: "flex-end",
-          top: 0,
-          position: "fixed",
-          cursor: "pointer",
-          padding: 2,
-        }}
-      >
-        <CloseIcon onClick={onClose} fontSize="large" sx={{ color: "white" }} />
-      </Box>
+      
 
       {/* {hintVisible && 
                 (<Box 
@@ -154,6 +143,24 @@ export default function OverlayWindow({
           border: "1px solid #858585ff",
         }}
       >
+          <Box
+          sx={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "flex-end",
+            top: 0,
+            position: "absolute",
+            cursor: "pointer",
+            padding: 2,
+          }}
+        >
+          <CloseIcon onClick={onClose} 
+                      sx={{ml: 1, 
+                        color: 'black',
+                        [baseTheme.breakpoints.up("xs")]: { fontSize: "4.5rem" },
+                        [baseTheme.breakpoints.up("md")]: { fontSize: "3.8rem" },
+                        [baseTheme.breakpoints.up("lg")]: { fontSize: "3rem" },}} />
+        </Box>
         {dialogueContent}
       </Box>
     </>

@@ -4,8 +4,8 @@ import Box from '@mui/material/Box';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useRef } from 'react';
-import GeneralButton from './GeneralButton';
 import { useTheme } from '@emotion/react';
+import { baseTheme } from './AppTheme';
 
 export default function DropdownMenuButton({ buttonName, content,paddingLeft }) {
   const theme = useTheme();
@@ -31,7 +31,7 @@ export default function DropdownMenuButton({ buttonName, content,paddingLeft }) 
         onMouseLeave={handleMouseLeave}
         variant='text' color='white' sx= {
         {
-        ...theme.typography.body1,
+        ...theme.typography.button,
         display: 'flex',  
         color: '#858585ff',
         alignItems: 'center', 
@@ -44,8 +44,14 @@ export default function DropdownMenuButton({ buttonName, content,paddingLeft }) 
       }>
         
         {buttonName} {/* move this lower to have the icon be on the left */}
-        {!open && <KeyboardArrowRightIcon fontSize='small' sx={{ ml: 1 }}/>}
-        {open && (<KeyboardArrowDownIcon fontSize='small' sx={{ ml: 1 }}/>)} 
+        {!open && <KeyboardArrowRightIcon sx={{ml: 1, 
+              [baseTheme.breakpoints.up("xs")]: { fontSize: "2.2rem" },
+              [baseTheme.breakpoints.up("md")]: { fontSize: "1.8rem" },
+              [baseTheme.breakpoints.up("lg")]: { fontSize: "1.4rem" },}}/>}
+        {open && (<KeyboardArrowDownIcon fontSize='small' sx={{ml: 1, 
+              [baseTheme.breakpoints.up("xs")]: { fontSize: "2.2rem" },
+              [baseTheme.breakpoints.up("md")]: { fontSize: "1.8rem" },
+              [baseTheme.breakpoints.up("lg")]: { fontSize: "1.4rem" },}}/>)} 
 
 
       </Button>

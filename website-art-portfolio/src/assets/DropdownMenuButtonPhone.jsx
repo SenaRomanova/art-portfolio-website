@@ -4,8 +4,11 @@ import Box from '@mui/material/Box';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { Stack } from '@mui/material';
+import { baseTheme } from './AppTheme';
+import { useTheme } from '@emotion/react';
 
 export default function DropdownMenuButtonPhone({ buttonName, content,paddingLeft }) {
+  const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
   const toggleMenu = () => setOpen(!open);
@@ -17,7 +20,9 @@ export default function DropdownMenuButtonPhone({ buttonName, content,paddingLef
           disableRipple
           onClick={toggleMenu}
           variant='text' color='white' sx= {
-          {display: 'flex',  
+          {
+          ...theme.typography.button,
+          display: 'flex',  
           color: '#858585ff', 
           paddingLeft: {paddingLeft} || 0, 
           textTransform: 'none', 
@@ -26,8 +31,14 @@ export default function DropdownMenuButtonPhone({ buttonName, content,paddingLef
         }>
           
           {buttonName} {/* move this lower to have the icon be on the left */}
-          {!open && <KeyboardArrowRightIcon fontSize='small' sx={{ ml: 1 }}/>}
-          {open && (<KeyboardArrowDownIcon fontSize='small' sx={{ ml: 1 }}/>)} 
+          {!open && <KeyboardArrowRightIcon sx={{ml: 1, 
+              [baseTheme.breakpoints.up("xs")]: { fontSize: "2.2rem" },
+              [baseTheme.breakpoints.up("md")]: { fontSize: "1.8rem" },
+              [baseTheme.breakpoints.up("lg")]: { fontSize: "1.4rem" },}}/>}
+          {open && (<KeyboardArrowDownIcon fontSize='small' sx={{ml: 1, 
+              [baseTheme.breakpoints.up("xs")]: { fontSize: "2.2rem" },
+              [baseTheme.breakpoints.up("md")]: { fontSize: "1.8rem" },
+              [baseTheme.breakpoints.up("lg")]: { fontSize: "1.4rem" },}}/>)} 
 
 
         

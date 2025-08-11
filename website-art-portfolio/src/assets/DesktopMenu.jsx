@@ -47,29 +47,31 @@ export default function DesktopMenu() {
       <Box
         sx={{
           display: "flex",
-          width: drawerWidth,
+          width: '60%',
           alignItems: "center",
-          justifyContent: "center",
-          // bgcolor: "rgb(240, 241, 244)",
+          justifySelf: 'center',
+          justifyContent: "space-evenly",
+          
+          maxWidth: 1000,
         }}
       >
-        <Box sx={{ width: "10%" }}>
+        <Box >
           <GeneralButton buttonName={"home"} to={"/"}  />
         </Box>
-        <Box sx={{ width: "10%" }}>
+        <Box >
           <DropdownMenuButton
             buttonName={"series"}
             content={DropdownContent}
           />
         </Box>
-        <Box sx={{ width: "10%" }}>
+        <Box >
           
           <GeneralButton
             buttonName={"about"}
             to={"/about"}
           />
         </Box>
-        <Box sx={{ width: "10%" }}>
+        <Box>
           <GeneralButton
             buttonName={"contacts"}
             to={"/contacts"}
@@ -89,6 +91,8 @@ export default function DesktopMenu() {
           height: "15vh",
           justifyContent: 'space-between',
           alignItems: "center",
+          justifySelf: 'center',
+          maxWidth: 1400,
         }}
       >
         <Box sx={{ width: '30%', paddingLeft: 3 }}>

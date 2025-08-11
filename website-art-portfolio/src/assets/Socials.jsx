@@ -22,7 +22,7 @@ export default function Socials(){
                 }}
             >
                 {/* visual */}
-                <InstagramIcon fontSize="68"  /> 
+                <InstagramIcon sx={{fontSize: 50}} /> 
             </IconButton>
         </Tooltip>
 
@@ -40,7 +40,7 @@ export default function Socials(){
                 }}
 
             >
-                <FacebookIcon fontSize="68" />
+                <FacebookIcon sx={{fontSize: 50}} />
             </IconButton>
         </Tooltip>
         </Box>
