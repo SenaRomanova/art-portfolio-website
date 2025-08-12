@@ -106,19 +106,17 @@ export default function OverlayWindow({
         >
           {materials}
         </Typography>
+        <Typography
+          variant="subtitle1"
+          sx={{ textAlign: "justify", width: "inherit", color: "grey" }}>
+          Note: These are original and one-of-a-kind artworks. I do not currently sell prints. If you are looking to use high resolution images of my art, please contact me via email or my socials.
+        </Typography>
       </Stack>
     </>
   );
 
   return (
     <>
-      
-
-      {/* {hintVisible && 
-                (<Box 
-                    sx={{display: 'flex', width: '100%', position: 'fixed', bottom: '8vh', justifyContent: 'center', alignItems: 'center', zIndex: 2000, padding: 2}}> 
-                    <ArrowDropDownCircleOutlinedIcon fontSize="large" sx={{color: 'black'}}/>
-                </Box>)} */}
 
       <Box
         ref={scrollBoxRef}
@@ -162,6 +160,7 @@ export default function OverlayWindow({
                         [baseTheme.breakpoints.up("lg")]: { fontSize: "3rem" },}} />
         </Box>
         {dialogueContent}
+        
       </Box>
     </>
   );

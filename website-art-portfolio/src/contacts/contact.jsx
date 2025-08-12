@@ -45,9 +45,7 @@ export default function ContactForm() {
       maxWidth="sm"
       sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      <Box sx={{ justifyItems: "center" }}>
-        <PageHeader name={"Contact Us!"} /> 
-      </Box>
+      
       <Stack
         component="form"
         ref={form}

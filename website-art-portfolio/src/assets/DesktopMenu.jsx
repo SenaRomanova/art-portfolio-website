@@ -77,6 +77,8 @@ export default function DesktopMenu() {
           justifyContent: "space-between",
           alignItems: "center",
           marginTop: 1,
+          marginBottom: 3,
+          justifySelf: 'center',
           maxWidth: 1400,
         }}
       >

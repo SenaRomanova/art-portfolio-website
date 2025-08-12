@@ -88,6 +88,8 @@ export default function Template({
         >
           {description}
         </Typography>
+
+        
         <Divider
           variant="middle"
           sx={{ width: "100%", justifySelf: "center" }}

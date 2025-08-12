@@ -21,6 +21,7 @@ import ContactForm from "./contacts/contact.jsx";
 import { useMediaQuery } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./assets/AppTheme";
+import PageHeader from "./assets/PageHeading.jsx";
 
 function App() {
   
@@ -32,6 +33,12 @@ function App() {
 
   useEffect(() => {
   setIsHome(location.pathname === "/");
+  }, [location.pathname]);
+
+  const [isContacts, setIsContacts] = useState(false);
+
+  useEffect(() => {
+  setIsContacts(location.pathname === "/contacts");
   }, [location.pathname]);
 
 
@@ -103,7 +110,8 @@ function App() {
     <>
     
       <ThemeProvider theme={theme}>
-        {isDesktop ? <DesktopMenu />  : <PhoneMenu/>}
+        
+          {isDesktop ? <DesktopMenu />  : <PhoneMenu/>}
         
         
         {isHome && fish}
@@ -111,7 +119,14 @@ function App() {
         <Box sx={{ display: "flex", justifyContent: 'center' }}>{content}</Box>
         <Box sx={{display: 'flex', bgcolor: 'white', width: '100%', height: '25vh'}}/>
         
-        <Box sx={{ display: "flex", width: '100%', justifyContent: 'center', padding: 3 }}><ContactForm/></Box>
+        {!isContacts && (
+          <Box sx={{ display: "flex", width: '100%', justifyContent: 'center', padding: 3, flexDirection: 'column' }}>
+            <Box sx={{display: "flex", justifyContent: 'center',}}>
+            
+              <PageHeader name={"Contact Us!"} /> 
+            </Box>
+            <ContactForm/>
+          </Box>)}
         <Box sx={{ display: "flex" }}><Footer/></Box>
       </ThemeProvider>
     </>
