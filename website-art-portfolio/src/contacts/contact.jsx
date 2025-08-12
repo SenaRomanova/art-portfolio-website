@@ -2,6 +2,7 @@ import {
   Box,
   Stack,
   Container,
+  Button,
   Typography,
   TextField,
   useMediaQuery,
@@ -10,6 +11,9 @@ import PageHeader from "../assets/PageHeading";
 import { useRef } from "react";
 
 import emailjs from "@emailjs/browser";
+import SendIcon from '@mui/icons-material/Send';
+import EmailIcon from '@mui/icons-material/Email';
+
 
 export default function ContactForm() {
   const isDesktop = useMediaQuery("(min-width:1000px)");
@@ -28,6 +32,7 @@ export default function ContactForm() {
       .then(
         () => {
           alert("Message sent successfully!");
+          form.current.reset();
         },
         (error) => {
           console.error("Failed to send message:", error.text);
@@ -41,7 +46,7 @@ export default function ContactForm() {
       sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       <Box sx={{ justifyItems: "center" }}>
-        <PageHeader name={"Contact Us!"} />
+        <PageHeader name={"Contact Us!"} /> 
       </Box>
       <Stack
         component="form"
@@ -63,7 +68,7 @@ export default function ContactForm() {
           id="outlined-basic"
           label="Email"
           variant="outlined"
-          placeholder="Enter email address"
+          placeholder="Enter Email"
           required
         />
         <TextField
@@ -78,9 +83,9 @@ export default function ContactForm() {
           rows={5}
           required
         />
-        <Button type="submit" variant="outlined">
-          {" "}
-          Send
+        <Button type="submit" variant="text" sx={{color: 'black', "&:hover": { color: "#cb0000ff" }, border: '1px solid grey'}}>
+        Send
+        <SendIcon sx={{ml: 1}}/>
         </Button>
       </Stack>
     </Container>
