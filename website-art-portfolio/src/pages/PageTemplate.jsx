@@ -23,7 +23,6 @@ export default function Template({
   const [id, setID] = useState(-1);
 
   const gridElement = (image, name, description, price, id) => (
-
     <Card
       onClick={() => {
         setID(id);
@@ -38,10 +37,10 @@ export default function Template({
         display: "flex",
         flexDirection: "column",
         "&:hover img": {
-            transform: "scale(1.04)", //zoom amt
-          },
+          transform: "scale(1.04)", //zoom amt
+        },
         "&:hover .hoverText": {
-          color: "rgba(65, 65, 65, 1)",  // example: change text color
+          color: "rgba(65, 65, 65, 1)", // example: change text color
         },
       }}
     >
@@ -49,18 +48,16 @@ export default function Template({
         component="img"
         src={image}
         alt="Image"
-        
         sx={{
           margin: 1,
           width: "auto",
-          height: "50%",
+          height: "65%",
           objectFit: "cover",
           overflow: "hidden",
           alignContent: "center",
           justifySelf: "center",
-          transition: "transform 0.3s ease",//zoom time
+          transition: "transform 0.3s ease", //zoom time
           transformOrigin: "center center",
-          
         }}
       />
 
@@ -89,7 +86,6 @@ export default function Template({
           {description}
         </Typography>
 
-        
         <Divider
           variant="middle"
           sx={{ width: "100%", justifySelf: "center" }}

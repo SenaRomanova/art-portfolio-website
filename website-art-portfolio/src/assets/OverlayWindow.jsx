@@ -8,7 +8,6 @@ import { useState, useRef, useEffect } from "react";
 import { baseTheme } from "./AppTheme";
 
 export default function OverlayWindow({
-  
   price,
   imageList,
   description,
@@ -16,7 +15,7 @@ export default function OverlayWindow({
   onClose,
 }) {
   const width = "90vw";
-  const height = "90vh";
+  const height = "80vh";
   const imgUrls = imageList || [];
 
   const [hintVisible, setHintVisible] = useState(true);
@@ -108,8 +107,11 @@ export default function OverlayWindow({
         </Typography>
         <Typography
           variant="subtitle1"
-          sx={{ textAlign: "justify", width: "inherit", color: "grey" }}>
-          Note: These are original and one-of-a-kind artworks. I do not currently sell prints. If you are looking to use high resolution images of my art, please contact me via email or my socials.
+          sx={{ textAlign: "justify", width: "inherit", color: "grey" }}
+        >
+          Note: These are original and one-of-a-kind artworks. I do not
+          currently sell prints. If you are looking to use high resolution
+          images of my art, please contact me via email or my socials.
         </Typography>
       </Stack>
     </>
@@ -117,7 +119,6 @@ export default function OverlayWindow({
 
   return (
     <>
-
       <Box
         ref={scrollBoxRef}
         sx={{
@@ -129,11 +130,11 @@ export default function OverlayWindow({
           alignSelf: "stretch",
           bgcolor: "white",
           position: "fixed",
-          top: "5vh",
+          top: "12vh",
           width: { width },
           height: { height },
           maxWidth: 1600,
-          padding: 2,
+          padding: 1,
           zIndex: 1000,
           overflowY: "auto",
           overflowX: "hidden",
@@ -141,26 +142,29 @@ export default function OverlayWindow({
           border: "1px solid #858585ff",
         }}
       >
-          <Box
+        <Box
           sx={{
             display: "flex",
             width: "100%",
             justifyContent: "flex-end",
             top: 0,
-            position: "absolute",
+            position: "fixed",
             cursor: "pointer",
-            padding: 2,
           }}
         >
-          <CloseIcon onClick={onClose} 
-                      sx={{ml: 1, 
-                        color: 'black',
-                        [baseTheme.breakpoints.up("xs")]: { fontSize: "4.5rem" },
-                        [baseTheme.breakpoints.up("md")]: { fontSize: "3.8rem" },
-                        [baseTheme.breakpoints.up("lg")]: { fontSize: "3rem" },}} />
+          <CloseIcon
+            onClick={onClose}
+            sx={{
+              ml: 1,
+              color: "black",
+              bgcolor: "rgba(255, 255, 255, 0.4)",
+              [baseTheme.breakpoints.up("xs")]: { fontSize: "4.5rem" },
+              [baseTheme.breakpoints.up("md")]: { fontSize: "3.8rem" },
+              [baseTheme.breakpoints.up("lg")]: { fontSize: "3rem" },
+            }}
+          />
         </Box>
         {dialogueContent}
-        
       </Box>
     </>
   );
