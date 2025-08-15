@@ -47,7 +47,6 @@ export default function OverlayWindow({
           display: "flex",
           marginTop: "20vh",
           marginBottom: "10vh",
-          width: "100%",
           height: "100%",
           width: "100%",
         }}
