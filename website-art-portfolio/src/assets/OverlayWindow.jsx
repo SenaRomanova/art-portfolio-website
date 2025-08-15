@@ -45,8 +45,9 @@ export default function OverlayWindow({
       <Stack
         sx={{
           display: "flex",
-          flexDirection: "column",
-          position: "absolute",
+          marginTop: "20vh",
+          marginBottom: "10vh",
+          width: "100%",
           height: "100%",
           width: "100%",
         }}

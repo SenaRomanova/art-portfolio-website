@@ -49,9 +49,9 @@ export default function DesktopMenu() {
         <Box>
           <GeneralButton buttonName={"home"} to={"/"} />
         </Box>
-        <Box>
+        <Box
+          onMouseEnter ={() => setDropdown(true)}>
           <DropdownMenuButton
-            onSelect={() => setDropdown(true)}
             buttonName={"series"}
             content={dropdown && DropdownContent}
           />
