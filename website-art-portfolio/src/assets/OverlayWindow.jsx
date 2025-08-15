@@ -45,74 +45,89 @@ export default function OverlayWindow({
       <Stack
         sx={{
           display: "flex",
-          marginTop: "20vh",
-          marginBottom: "10vh",
-          width: "100%",
+          flexDirection: "column",
+          position: "absolute",
           height: "100%",
+          width: "100%",
         }}
       >
         <Box
           sx={{
             display: "flex",
             width: "inherit",
-            justifyContent: "left",
-            alignItems: "center",
+            paddingBottom: 3,
           }}
         >
           {imageList && <ScrollableGallery imgUrls={imgUrls} />}
         </Box>
-      </Stack>
 
-      <Stack
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          position: "static",
-          alignItems: "center",
-          color: "grey",
-          width: "90%",
-        }}
-      >
-        <Typography
-          variant="h4"
-          sx={{ textAlign: "Left", width: "inherit", paddingBottom: 2 }}
-        >
-          {price}
-        </Typography>
+        <Box sx={{ height: "100%", padding: 3 }}>
+          <Typography
+            variant="h4"
+            sx={{
+              textAlign: "Left",
+              width: "inherit",
+              paddingBottom: 2,
+              color: "grey",
+            }}
+          >
+            {price}
+          </Typography>
 
-        <Typography
-          variant="h5"
-          sx={{ textAlign: "Left", width: "inherit", paddingBottom: 2 }}
-        >
-          {description && "Description:"}
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{ textAlign: "justify", width: "inherit", paddingBottom: 4 }}
-        >
-          {description}
-        </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              textAlign: "Left",
+              width: "inherit",
+              paddingBottom: 2,
+              color: "grey",
+            }}
+          >
+            {description && "Description:"}
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              textAlign: "justify",
+              width: "inherit",
+              paddingBottom: 4,
+              color: "grey",
+            }}
+          >
+            {description}
+          </Typography>
 
-        <Typography
-          variant="h5"
-          sx={{ textAlign: "Left", width: "inherit", paddingBottom: 2 }}
-        >
-          {materials && "Materials:"}
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{ textAlign: "justify", width: "inherit", paddingBottom: 4 }}
-        >
-          {materials}
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          sx={{ textAlign: "justify", width: "inherit", color: "grey" }}
-        >
-          Note: These are original and one-of-a-kind artworks. I do not
-          currently sell prints. If you are looking to use high resolution
-          images of my art, please contact me via email or my socials.
-        </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              textAlign: "Left",
+              width: "inherit",
+              paddingBottom: 2,
+              color: "grey",
+            }}
+          >
+            {materials && "Materials:"}
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              textAlign: "justify",
+              width: "inherit",
+              paddingBottom: 4,
+              color: "grey",
+            }}
+          >
+            {materials}
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            sx={{ textAlign: "justify", width: "inherit", color: "grey" }}
+          >
+            Note: These are original and one-of-a-kind artworks. I do not
+            currently sell prints. If you are looking to use high resolution
+            images of my art, please contact me via email or my socials.
+          </Typography>
+        </Box>
       </Stack>
     </>
   );
@@ -128,8 +143,8 @@ export default function OverlayWindow({
           alignItems: "center",
           justifySelf: "center",
           alignSelf: "stretch",
+          position: "absolute",
           bgcolor: "white",
-          position: "fixed",
           top: "12vh",
           width: { width },
           height: { height },
