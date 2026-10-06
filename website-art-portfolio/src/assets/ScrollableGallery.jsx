@@ -9,6 +9,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useTheme } from "@emotion/react";
 import { useMediaQuery } from "@mui/material";
+import { useSwipeable } from "react-swipeable";
 
 export default function ScrollableGallery({ imgUrls }) {
   const theme = useTheme();
@@ -16,6 +17,20 @@ export default function ScrollableGallery({ imgUrls }) {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   imgUrls = imgUrls || []; // Default images if none provided
+
+  const selectNext = () => {
+    setSelectedIndex((selectedIndex + 1) % imgUrls.length);
+  };
+
+  const selectPrev = () => {
+    setSelectedIndex((selectedIndex + imgUrls.length - 1) % imgUrls.length);
+  };
+
+  const swipe = useSwipeable({
+    onSwipedLeft: () => setSelectedIndex((selectedIndex + 1) % imgUrls.length),
+    onSwipedRight: () =>
+      setSelectedIndex((selectedIndex + imgUrls.length - 1) % imgUrls.length),
+  });
 
   return (
     <>
@@ -26,7 +41,6 @@ export default function ScrollableGallery({ imgUrls }) {
           alignItems: "center",
           width: "100%",
           height: "auto",
-          marginTop: 8,
         }}
       >
         <Box
@@ -47,11 +61,7 @@ export default function ScrollableGallery({ imgUrls }) {
               }}
             >
               <IconButton
-                onClick={() =>
-                  setSelectedIndex(
-                    (selectedIndex + imgUrls.length - 1) % imgUrls.length
-                  )
-                }
+                onClick={selectPrev}
                 sx={{
                   color: "white",
                   alignItems: "center",
@@ -79,6 +89,7 @@ export default function ScrollableGallery({ imgUrls }) {
             }}
           >
             <Box
+              {...swipe}
               component={"img"}
               src={selectedIndex === -1 ? imgUrls[0] : imgUrls[selectedIndex]}
               alt="Logo"
@@ -108,9 +119,7 @@ export default function ScrollableGallery({ imgUrls }) {
               }}
             >
               <IconButton
-                onClick={() =>
-                  setSelectedIndex((selectedIndex + 1) % imgUrls.length)
-                }
+                onClick={selectNext}
                 sx={{
                   color: "white",
                   alignItems: "center",

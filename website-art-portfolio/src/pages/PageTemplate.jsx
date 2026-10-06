@@ -100,7 +100,7 @@ export default function Template({
         <Box sx={{ margin: 1 }}>
           <Grid
             container
-            spacing={3}
+            spacing={10}
             rowSpacing={6}
             sx={{ justifyContent: "center", alignContent: "center" }}
           >
@@ -115,8 +115,8 @@ export default function Template({
                 sx={{
                   display: "flex",
                   flexDirection: "column",
-                  height: 400,
-                  width: 300,
+                  height: 430,
+                  width: { xs: "70%", md: "25%", lg: "25%" },
                 }}
               >
                 {gridElement(
