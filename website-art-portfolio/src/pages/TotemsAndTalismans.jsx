@@ -25,7 +25,8 @@ export default function TotemsAndTalismans() {
     const thumbnailNames = ['Holey Shell', 'Ode to the Silkworm', 'Talisman', 'The Far Lands', 'The Ocean Depths'];
 
     const thumbnailDescriptions = ['Holey Shell Description', 'Ode to the Silkworm Description', 'Talisman Description', 'The Far Lands Description', 'The Ocean Depths Description'];
-    const priceList = ['$5,200.00', '$5,200.00', '$10,000.00', '$5,200.00', '$10,000.00']
+    const priceList = ['SOLD', 'SOLD', 'SOLD', 'SOLD', 'SOLD']
+    
 
     //create pop-up page content for each artwork:
     const holeyShellCatalogue = [HoleyShell, HoleyShellDetail];

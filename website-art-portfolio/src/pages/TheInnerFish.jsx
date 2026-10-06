@@ -41,7 +41,7 @@ export default function TheInnerFish() {
   ];
   
   
-  const priceList = ['$5,200.00', '$5,200.00', '$10,000.00', '$5,200.00', '$10,000.00']
+  const priceList = ['SOLD', 'SOLD', 'SOLD', 'SOLD', 'SOLD']
 
   const archiveFishCatalogue = [ArchiveFish, ArchiveFishDetail];
   const islandicSweaterCatalogue = [

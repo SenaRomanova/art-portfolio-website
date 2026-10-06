@@ -14,10 +14,10 @@ export default function AnotherLions() {
     const thumbnails = [ItalianFontaine, AnotherLions1, AnotherLions2];
 
     //add the thumbnail descriptions:
-    const thumbnailNames = ['ItalianFontaine', 'AnotherLions1', 'AnotherLions2'];
+    const thumbnailNames = ['Italian Fontaine', 'Another Lions I', 'Another Lions II'];
 
     const thumbnailDescriptions = ['ItalianFontaine', 'AnotherLions1', 'AnotherLions2'];
-    const priceList = ['$5,200.00', '$5,200.00', '$10,000.00',]
+    const priceList = ['SOLD', 'SOLD', 'SOLD',]
 
     //create pop-up page content for each artwork:
     const italianFontaineCatalogue = [ItalianFontaine];

@@ -22,7 +22,7 @@ export default function NomadicBeauties() {
     //add the thumbnail descriptions:
     const thumbnailNames = ['Altai Sun', 'Archer Girl', 'Shaman Girl', 'Star Gatherer'];
     
-    const priceList = ['$5,200.00', '$5,200.00', '$10,000.00', '$10,000.00']
+    const priceList = ['SOLD', 'SOLD', 'SOLD', 'SOLD']
 
     const thumbnailDescriptions = ['Altai Sun Description', 'Archer Girl Description', 'Shaman Girl Description', 'Star Gatherer Description'];
 

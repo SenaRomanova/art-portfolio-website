@@ -63,6 +63,14 @@ export default function OverlayWindow({
 
         <Box sx={{ height: "100%", padding: 3 }}>
           <Typography
+            variant="subtitle1"
+            sx={{ textAlign: "center", width: "inherit", color: "grey", padding: 3 }}
+          >
+            Note: These are original and one-of-a-kind artworks. I do not
+            currently sell prints. If you are looking to use high resolution
+            images of my art, please contact me via email or my socials.
+          </Typography>
+          <Typography
             variant="h4"
             sx={{
               textAlign: "Left",
@@ -74,7 +82,7 @@ export default function OverlayWindow({
             {price}
           </Typography>
 
-          <Typography
+          {/* <Typography
             variant="h5"
             sx={{
               textAlign: "Left",
@@ -118,15 +126,8 @@ export default function OverlayWindow({
             }}
           >
             {materials}
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            sx={{ textAlign: "justify", width: "inherit", color: "grey" }}
-          >
-            Note: These are original and one-of-a-kind artworks. I do not
-            currently sell prints. If you are looking to use high resolution
-            images of my art, please contact me via email or my socials.
-          </Typography>
+          </Typography> */}
+          
         </Box>
       </Stack>
     </>

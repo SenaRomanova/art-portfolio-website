@@ -14,7 +14,7 @@ export default function ThePenates() {
     const thumbnailNames = ['The Penates'];
 
     const thumbnailDescriptions = ['The Penates Description'];
-    const priceList=['$10,000.00']
+    const priceList=['SOLD']
 
     //create pop-up page content for each artwork:
     const thePenatesCatalogue = [Penates];
