@@ -1,8 +1,6 @@
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import FishCover from "../assets/FishCover.jpg";
-import IRLogo from "../assets/IRLogo.PNG";
 import { useState } from "react";
 import Stack from "@mui/material/Stack";
 import Container from "@mui/material/Container";

@@ -4,7 +4,7 @@ import ListItem from "@mui/material/ListItem";
 import GeneralButton from "./GeneralButton";
 import DropdownMenuButton from "./DropdownMenuButton";
 import Typography from "@mui/material/Typography";
-import "../assets/IRLogo.PNG";
+import "../assets/ImageCatalogue/IRLogo.PNG";
 import Container from "@mui/material/Container";
 import ArtistLogo from "./Logo";
 import Socials from "./Socials";

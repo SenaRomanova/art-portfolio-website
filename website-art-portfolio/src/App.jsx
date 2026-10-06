@@ -13,7 +13,7 @@ import ThePenates from "./pages/ThePenates.jsx";
 import TotemsAndTalismans from "./pages/TotemsAndTalismans.jsx";
 import DesktopMenu from "./assets/DesktopMenu.jsx";
 import Footer from "./assets/Footer.jsx";
-import FishCover from './assets/FishCover.jpg';
+import FishCover from './assets/ImageCatalogue/FishCover.jpg';
 import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
 import RefundPolicy from "./pages/RefundPolicy.jsx";
 import TermsOfService from "./pages/ToS.jsx";
@@ -61,8 +61,8 @@ function App() {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/about" element={<About />} />
         <Route path="/tos" element={<TermsOfService />} />
-        <Route path="/privacy-policy" element={<RefundPolicy />} />
-        <Route path="/refund-policy" element={<PrivacyPolicy />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
       </Routes>
     </Box>
   );

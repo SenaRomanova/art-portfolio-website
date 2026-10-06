@@ -1,4 +1,4 @@
-import IRLogo from "../assets/IRLogo.PNG";
+import IRLogo from "../assets/ImageCatalogue/IRLogo.PNG";
 import { Box, Container, Typography } from "@mui/material";
 import logoimage from "../assets/ImageCatalogue/about me/logoimage.jpg";
 import { baseTheme } from "./AppTheme";
