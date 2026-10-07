@@ -19,6 +19,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
 import RefundPolicy from "./pages/RefundPolicy.jsx";
 import TermsOfService from "./pages/ToS.jsx";
 import ContactForm from "./contacts/contact.jsx";
+import WorkInProgress from "./pages/WorkInProgress.jsx";
 import { useMediaQuery } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./assets/AppTheme";
@@ -65,6 +66,7 @@ function App() {
         <Route path="/tos" element={<TermsOfService />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/workinprogress" element={<WorkInProgress />} />
       </Routes>
     </Box>
   );

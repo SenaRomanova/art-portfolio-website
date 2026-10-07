@@ -50,6 +50,9 @@ export default function DesktopMenu() {
         <Box>
           <GeneralButton buttonName={"home"} to={"/"} />
         </Box>
+         <Box>
+          <GeneralButton buttonName={"work in progress"} to={"/workinprogress"} />
+        </Box>
         <Box
           onMouseEnter ={() => setDropdown(true)}>
           <DropdownMenuButton
