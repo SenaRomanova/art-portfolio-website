@@ -15,7 +15,8 @@ export default function WorkInProgress() {
     const images = [WIP1, WIP2, WIP3, WIP4, WIP5];
     return (
         <>
-        <Container sx={{ display: 'flex', flexDirection: 'column', width: '100%'}}>
+        <Container sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' , width: '100%' }}>
+
             <PageHeader name={"Works In Progress"} />
             <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',height: "100%", width: "100%", }}>
 
