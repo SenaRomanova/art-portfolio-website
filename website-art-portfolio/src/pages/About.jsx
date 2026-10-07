@@ -45,13 +45,7 @@ export default function About() {
               padding: 5,
             }
           }}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          Working at the intersection of fine art, history, and material exploration, Inna Romanova transforms paper into complex, multi-layered structural canvases. Rather than relying on artificial aging techniques, she combines contrasting textures, such as ragged contours, matte paint, glass-like varnishes, and raw paper edges, to evoke the depth of lived history. Her process mirrors the human capacity for resilience: fragmenting and reassembling materials to form something whole, enduring, and conceptually rich.
         </Typography>
 
       </Container>
@@ -62,9 +56,7 @@ export default function About() {
         <Typography variant="body1" color="black" textAlign={'justify'}>
           Dear viewer! I would like to share a little about the works presented here. As you can probably tell from the choice of subjects, they reflect my deep interest in history, archaeology, and ethnography. In museums, I have always been drawn to exhibits that weren't fully restored, but rather conserved: those bearing every scuff, scratch, dent, and loss. It is as if they weren’t made by human hands alone; time itself acted as a co-creator. I remember looking at an ancient manuscript once. Following museum archival rules, it was pressed between two sheets of glass, and in its extreme fragility, it was simply breathtaking. To my eyes, the uneven, frayed edges, the water stains, and the blemishes didn't ruin it at all! Quite the opposite, in fact. That was precisely when I realized that only paper would allow me to look beyond my usual graphic materials and explore so much more. Multi-layering, cutouts, torn edges, stitches, and rivets — all of these would become equal tools in creating the image. There is something thrilling about building your own new 'canvas' out of several sheets of paper — sometimes old, and varied in texture — and then drawing as if completely ignoring the fact that it was once torn apart (you can trace the relation to human psychology here!).
         </Typography>
-        <Typography variant="body1" color="black" textAlign={'justify'} sx={{mt: 2}}>
-           A quick note on the materials: with this technique, there is always a risk of the piece slipping into looking 'gimmicky' or like a stage prop, which is the last thing I want. I don’t try to artificially age the surface or add texture using pre-made hobby kits. Simulating a specific material isn't the goal either. What matters more is leaving an overall impression of working with a complex, diverse texture: paper and metal, 'glass-like' varnishes and matte paint, clean lines and ragged contours. Not just a flat paper surface, but its multi-layered depth and rich variety of textures within a single piece — just like in life. 
-        </Typography>
+        
       </Container>
 
       <Container sx={{mb: 5}}>
@@ -79,16 +71,9 @@ export default function About() {
         }}>
 
           <Box>
-          <Typography variant="h4" color="black" sx={{mb: 2}}>Technique</Typography>
-          <Typography variant="body1" color="black" textAlign={'justify'}>
-            iLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </Typography>
+          <Typography variant="body1" color="black" textAlign={'justify'} sx={{mt: 2}}>
+           A quick note on the materials: with this technique, there is always a risk of the piece slipping into looking 'gimmicky' or like a stage prop, which is the last thing I want. I don’t try to artificially age the surface or add texture using pre-made hobby kits. Simulating a specific material isn't the goal either. What matters more is leaving an overall impression of working with a complex, diverse texture: paper and metal, 'glass-like' varnishes and matte paint, clean lines and ragged contours. Not just a flat paper surface, but its multi-layered depth and rich variety of textures within a single piece — just like in life. 
+        </Typography>
           </Box>
           <Container
             component={"img"}

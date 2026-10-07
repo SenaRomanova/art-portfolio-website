@@ -32,10 +32,10 @@ export default function Footer() {
           width: '100%',
           flexDirection: 'column',
           alignItems: 'flex-start'
-          }}>
+          }}>{/* 
           <GeneralButton buttonName={"Terms of Service"} to={"/tos"} /> 
           <GeneralButton buttonName={"Privacy Policy"} to={"/privacy-policy"} />
-          <GeneralButton buttonName={"Refund Policy"} to={"/refund-policy"} />
+          <GeneralButton buttonName={"Refund Policy"} to={"/refund-policy"} /> */}
         </Box>
       </Box>
 
