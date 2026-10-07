@@ -6,6 +6,9 @@ export default function PageHeader({name}){
         <Box
             sx={{
             display: "flex",
+            width: "100%",
+            justifyContent: "center",
+            alignItems: "center",
             padding: 5
             }}
          >
