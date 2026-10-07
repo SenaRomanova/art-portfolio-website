@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import { useEffect, useState } from "react";
 import AnotherLions from "./pages/AnotherLions.jsx";
 import NomadicBeauties from "./pages/NomadicBeauties.jsx";
+import TheLostSketchbook from "./pages/TheLostSketchbook.jsx";
 import Sirens from "./pages/Sirens.jsx";
 import TheInnerFish from "./pages/TheInnerFish.jsx";
 import ThePenates from "./pages/ThePenates.jsx";
@@ -51,8 +52,9 @@ function App() {
       }}
     >
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home />} /> */}
         <Route path="/anotherlions" element={<AnotherLions />} />
+        <Route path="/thelostsketchbook" element={<TheLostSketchbook />} />
         <Route path="/nomadicbeauties" element={<NomadicBeauties />} />
         <Route path="/sirens" element={<Sirens />} />
         <Route path="/theinnerfish" element={<TheInnerFish />} />
@@ -111,16 +113,15 @@ function App() {
     
       <ThemeProvider theme={theme}>
         
-          {isDesktop ? <DesktopMenu />  : <PhoneMenu/>}
+        {isDesktop ? <DesktopMenu />  : <PhoneMenu/>}
         
         
-        {isHome && fish}
+        { isHome && fish }
 
         <Box sx={{ display: "flex", justifyContent: 'center' }}>{content}</Box>
-        <Box sx={{display: 'flex', bgcolor: 'white', width: '100%', height: '25vh'}}/>
         
         {!isContacts && (
-          <Box sx={{ display: "flex", width: '100%', justifyContent: 'center', padding: 3, flexDirection: 'column' }}>
+          <Box sx={{ display: "flex", width: '100%', justifyContent: 'center', padding: 8, flexDirection: 'column' }}>
             <Box sx={{display: "flex", justifyContent: 'center',}}>
             
               <PageHeader name={"Contact Us!"} /> 

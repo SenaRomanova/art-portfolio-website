@@ -10,6 +10,11 @@ export default function Home() {
   return (
     <>
       <PageHeader name={'Home'}/>
+      <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+        <Typography variant="h4" color="black" textAlign={'center'} sx={{mb: 3}}>
+          Welcome to My Art Portfolio
+        </Typography>
+        </Container>
     </>
   );
 }

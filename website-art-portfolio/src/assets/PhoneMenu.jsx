@@ -20,6 +20,12 @@ export default function PhoneMenu() {
   const [phoneMenuOpen, setMenuOpen] = useState(false);
   const DropdownContent = (
     <Stack sx={{ display: "flex", alignItems: "flex-start", padding: 2 }}>
+    
+    <GeneralButton
+        onSelect={() => setMenuOpen(false)}
+        buttonName={"The Lost Sketchbook"}
+        to={"/nomadicbeauties"}
+      />
       <GeneralButton
         onSelect={() => setMenuOpen(false)}
         buttonName={"Nomadic Beauties"}

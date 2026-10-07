@@ -18,6 +18,7 @@ export default function DesktopMenu() {
 
   const DropdownContent = (
     <Box onClick={() => setDropdown(false)}>
+      <GeneralButton buttonName={"The Lost Sketchbook"} to={"/thelostsketchbook"} />
       <GeneralButton buttonName={"Nomadic Beauties"} to={"/nomadicbeauties"} />
       <GeneralButton buttonName={"The Inner Fish"} to={"/theinnerfish"} />
       <GeneralButton

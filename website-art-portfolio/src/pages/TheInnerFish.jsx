@@ -12,10 +12,12 @@ import MethuselahTheFish from "../assets/ImageCatalogue/TheInnerFish/MethuselahT
 import MethuselahTheFishDetail from "../assets/ImageCatalogue/TheInnerFish/MethuselahTheFishDetail.JPG";
 import RenaissanceFish from "../assets/ImageCatalogue/TheInnerFish/RenaissanceFish.jpg";
 import RenaissanceFishDetail from "../assets/ImageCatalogue/TheInnerFish/RenaissanceFishDetail.jpg";
+import SecretJourney from "../assets/ImageCatalogue/TheInnerFish/SecretJourney.jpg";
 import PageHeader from "../assets/PageHeading";
 
 export default function TheInnerFish() {
   const thumbnails = [
+    SecretJourney,
     ArchiveFish,
     GirlInAnIslandicSweater,
     ManuscriptFish,
@@ -25,6 +27,7 @@ export default function TheInnerFish() {
 
   //add the thumbnail descriptions:
   const thumbnailNames = [
+    "Secret Journey",
     "Archive Fish",
     "Girl in the Islandic Sweater",
     "Manuscript Fish",
@@ -33,6 +36,7 @@ export default function TheInnerFish() {
   ];
 
   const thumbnailDescriptions = [
+    "Secret Journey Description",
     "Archive Fish Description",
     "Girl in the Islandic Sweater",
     "Manuscript Fish Description",
@@ -41,8 +45,9 @@ export default function TheInnerFish() {
   ];
   
   
-  const priceList = ['SOLD', 'SOLD', 'SOLD', 'SOLD', 'SOLD']
+  const priceList = ['SOLD', 'SOLD', 'SOLD', 'SOLD', 'SOLD', 'SOLD']
 
+  const secretJourneyCatalogue = [SecretJourney];
   const archiveFishCatalogue = [ArchiveFish, ArchiveFishDetail];
   const islandicSweaterCatalogue = [
     GirlInAnIslandicSweater,
@@ -52,6 +57,7 @@ export default function TheInnerFish() {
   const methuselahFishCatalogue = [MethuselahTheFish, MethuselahTheFishDetail];
   const renaissanceFishCatalogue = [RenaissanceFish, RenaissanceFishDetail];
   const catalogues = [
+    secretJourneyCatalogue,
     archiveFishCatalogue,
     islandicSweaterCatalogue,
     manuscriptFishCatalogue,
@@ -59,12 +65,14 @@ export default function TheInnerFish() {
     renaissanceFishCatalogue,
   ];
 
+  const secretJourneyDescription = "Secret Journey";
   const archiveFishDescription = "Archive Fish";
   const islandicSweaterDescription = "Islandic Sweater";
   const manuscriptFishDescription = "Manuscript Fish";
   const methuselahFishDescription = "Methuselah The Fish";
   const renaissanceFishDescription = "Renaissance Fish";
   const descriptions = [
+    secretJourneyDescription,
     archiveFishDescription,
     islandicSweaterDescription,
     manuscriptFishDescription,
@@ -72,12 +80,14 @@ export default function TheInnerFish() {
     renaissanceFishDescription,
   ];
 
+  const secretJourneyMaterials = "Secret Journey Materials";
   const archiveFishMaterials = "Archive Fish Materials";
   const islandicSweaterMaterials = "Islandic Sweater Materials";
   const manuscriptFishMaterials = "Manuscript Fish Materials";
   const methuselahFishMaterials = "Methuselah The Fish Materials";
   const renaissanceFishMaterials = "Renaissance Fish Materials";
   const materials = [
+    secretJourneyMaterials,
     archiveFishMaterials,
     islandicSweaterMaterials,
     manuscriptFishMaterials,
