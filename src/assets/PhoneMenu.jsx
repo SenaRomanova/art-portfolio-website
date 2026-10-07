@@ -24,7 +24,7 @@ export default function PhoneMenu() {
     <GeneralButton
         onSelect={() => setMenuOpen(false)}
         buttonName={"The Lost Sketchbook"}
-        to={"/nomadicbeauties"}
+        to={"/thelostsketchbook"}
       />
       <GeneralButton
         onSelect={() => setMenuOpen(false)}
