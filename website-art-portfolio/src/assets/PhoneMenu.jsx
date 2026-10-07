@@ -86,6 +86,13 @@ export default function PhoneMenu() {
               to={"/"}
             />
           </ListItem>
+          <ListItem>
+            <GeneralButton
+              onSelect={() => setMenuOpen(false)}
+              buttonName={"work in progress"}
+              to={"/workinprogress"}
+            />
+          </ListItem>
 
           <ListItem>
             <GeneralButton

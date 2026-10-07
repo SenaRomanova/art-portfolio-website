@@ -73,7 +73,6 @@ function App() {
 
   const fish = (
     <>
-      {isDesktop ? (
           <Box
             sx={{
               display: "flex",
@@ -106,7 +105,6 @@ function App() {
               }}
             />
           </Box>
-        ) : null}
       </>
   )
 
@@ -117,7 +115,7 @@ function App() {
         
         {isDesktop ? <DesktopMenu />  : <PhoneMenu/>}
         
-        
+
         { isHome && fish }
 
         <Box sx={{ display: "flex", justifyContent: 'center' }}>{content}</Box>
